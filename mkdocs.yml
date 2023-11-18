@@ -1,0 +1,5 @@
+site_name: Telecom Bootcamp
+repo_url: https://github.com/mohitkr05/TelcoBootcamp
+theme:
+  name: null
+  custom_dir: 'cinder'
