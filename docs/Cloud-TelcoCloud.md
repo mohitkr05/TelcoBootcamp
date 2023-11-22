@@ -1,4 +1,4 @@
-# Day 1
+# Cloud Computing & Telco Cloud
 
 ## Checklist for today
 
@@ -199,36 +199,3 @@ The purpose of this VM will be to serve as your development machine which you ca
 5. Start the virtual machine
 6. Login to the VM
 
-
-## Working with Git
-
-1. Downloading and installing Git : If you don't already have Git installed, you can download Git at www.git-scm.com.
-    > If you need additional assistance installing Git, you can find more information in the ProGit chapter on installing Git.
-
-Now is a good time to create a shortcut to the command-line application you will want to use with Git:
-
-    If you are working on Windows, It is highly recommended to use Git Bash which is installed with the Git package, so that you can follow along with the facilitator who will be using Bash
-    If you are working on macOS or another Unix-like system, you can use the built-in Terminal application
-
-
-2. Clone the following repository
-
-Open your chosen shell, and type:
-
-`git clone https://github.com/mohitkr05/TelcoBootcamp.git`
-
-If the clone is successful you'll see:
-
-```
-$ git clone https://github.com/mohitkr05/TelcoBootcamp.git
-Cloning into 'TelcoBootcamp'...
-remote: Counting objects: 6, done.
-remote: Compressing objects: 100% (2/2), done.
-remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
-Unpacking objects: 100% (6/6), done.
-```
-
-3. Assignment
-- [Excercise -  Git](E1-git-commands.md)
-- Read the Pro Git Ebook
-- Watch the Linux command line video
