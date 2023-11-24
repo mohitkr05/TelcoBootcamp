@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Publicly shareable notes for Telecom Bootcamp">
+    <meta name="author" content="Mohit Kumar">
+    
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    
+    <title>01 - System Preparation - Telecom Bootcamp</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/dracula.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../..">Telecom Bootcamp</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Notes <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../notes/introduction-telecom/">Introduction to Telecom Bootcamp</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../notes/Cloud-TelcoCloud/">Cloud Computing & Telco Cloud</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../notes/git/">Git & GitOps</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../notes/linux/">Linux</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../notes/shellscripting/">Linux Shell scripting</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Excercises <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li class="active">
+    <a href="./">01 - System Preparation</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../git-handson/">02 - Git Hands-on</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../../notes/shellscripting/">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="next" href="../git-handson/">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/mohitkr05/TelcoBootcamp/edit/master/docs/excercises/preparation.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#01-system-preparation">01 - System preparation</a></li>
+            <li class="second-level"><a href="#software-to-be-installed">Software to be installed</a></li>
+                
+            <li class="second-level"><a href="#installing-software-on-windows">Installing software on Windows</a></li>
+                
+                <li class="third-level"><a href="#to-use-chocolatey">To use chocolatey</a></li>
+                <li class="third-level"><a href="#chocolatey-script">Chocolatey Script</a></li>
+            <li class="second-level"><a href="#linux-vm-configuration">Linux VM Configuration</a></li>
+                
+                <li class="third-level"><a href="#configure-ssh-port-forwarding">Configure SSH port forwarding</a></li>
+                <li class="third-level"><a href="#system-configuration">System Configuration</a></li>
+                <li class="third-level"><a href="#installing-git">Installing Git</a></li>
+            <li class="second-level"><a href="#configure-git">Configure Git</a></li>
+                
+            <li class="second-level"><a href="#download-the-repository">Download the Repository</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="01-system-preparation">01 - System preparation</h1>
+<p>Suggest method is to use Virtual Machine with VirtualBox on your local PC, if you have resource constraints you can use WSL as well.</p>
+<h2 id="software-to-be-installed">Software to be installed</h2>
+<ul>
+<li><strong>VirtualBox</strong>: VirtualBox is a powerful open-source virtualization tool that allows you to run multiple operating systems on a single machine. Ideal for development, testing, and experimentation.</li>
+<li><strong>Python 3</strong>: Python is a versatile and easy-to-learn programming language. Python 3 is the latest version, offering improvements in performance and syntax over its predecessors.</li>
+<li><strong>Notepad++</strong>: Notepad++ is a feature-rich, free source code editor and Notepad replacement that supports various programming languages. It offers a clean and efficient interface.</li>
+<li><strong>Kubernetes CLI</strong>: The Kubernetes Command Line Interface (kubectl) allows you to interact with Kubernetes clusters. Manage applications, deploy containers, and troubleshoot your cluster from the command line.</li>
+<li><strong>Kubernetes Helm</strong>: Helm is a package manager for Kubernetes applications. It simplifies the deployment and management of complex applications on Kubernetes clusters</li>
+<li><strong>Wireshark</strong>: Wireshark is a powerful network protocol analyzer. It lets you capture and examine the data traveling back and forth on your network, helping with troubleshooting and analysis.</li>
+<li><strong>PuTTY</strong>: PuTTY is a lightweight and reliable terminal emulator for Windows. It supports various network protocols, including SSH, Telnet, and more.</li>
+<li><strong>Git</strong>: Git is a distributed version control system used for tracking changes in source code during software development. It facilitates collaboration and code management.</li>
+<li><strong>Visual Studio Code (VSCode)</strong>: VSCode is a free, open-source code editor with excellent support for various programming languages. It features a wide range of extensions for customization and additional functionality.</li>
+<li><strong>Docker Desktop</strong>:  Docker Desktop simplifies the deployment and management of containerized applications. It provides an easy-to-use interface for building, testing, and running Docker containers.</li>
+<li><strong>AWS Command Line Interface (AWS CLI)</strong>:  AWS CLI is a unified tool to manage AWS services directly from the command line. It simplifies script automation and interaction with various AWS resources.</li>
+</ul>
+<h2 id="installing-software-on-windows">Installing software on Windows</h2>
+<p>In this chapter, we guide you through the essential steps of installing the required software for your Windows system. The list of softwares to be installed are as follows.</p>
+<p>You can either directly download from the exe files that are provided or you can use chocolatey to download and install it.</p>
+<h3 id="to-use-chocolatey">To use chocolatey</h3>
+<p>To install Chocolatey, simply open PowerShell and run the following command:
+<code>Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))</code></p>
+<h3 id="chocolatey-script">Chocolatey Script</h3>
+<pre><code># Install Chocolatey packages for DevOps tools
+choco install virtualbox -y
+choco install git -y
+</code></pre>
+<p>Going forward we are going to install following softwares as well.</p>
+<pre><code>choco install python3 -y
+choco install notepadplusplus -y
+choco install kubernetes-cli -y
+choco install kubernetes-helm -y
+choco install wireshark -y
+choco install putty -y
+choco install vscode -y
+choco install docker-desktop -y
+choco install awscli -y
+choco install terraform -y
+choco install packer -y
+choco install jenkins -y
+</code></pre>
+<h2 id="linux-vm-configuration">Linux VM Configuration</h2>
+<p>We are going to use the Virtual Machine as our NMS (Network Management Server)</p>
+<h3 id="configure-ssh-port-forwarding">Configure SSH port forwarding</h3>
+<ol>
+<li>Add yourself into the <code>sudoers</code> file <ol>
+<li>Login as root with - <code>su - root</code></li>
+<li>Add yourself to the <code>sudoers</code> file - <code>echo "&lt;username&gt; ALL=(ALL) NOPASSWD:ALL" &gt;&gt; /etc/sudoers</code></li>
+<li>Exit the terminal and test it using - <code>sudo whoami</code></li>
+</ol>
+</li>
+<li>Install OpenSSH <ol>
+<li>Perform the apt-get update using - <code>sudo apt update</code></li>
+<li>Install OpenSSH - <code>sudo apt install openssh-server</code></li>
+</ol>
+</li>
+<li>Configure OpenSSH for Password login<ol>
+<li>Start the OpenSSH service - <code>sudo systemctl start ssh</code></li>
+<li>Enable the OpenSSH service - <code>sudo systemctl enable ssh</code></li>
+<li>Check the status of the OpenSSH service - <code>sudo systemctl status ssh</code></li>
+<li>Enable port 22 in UFW - <code>sudo ufw allow 22</code></li>
+</ol>
+</li>
+<li>Configure the Port forwarding the VM <ol>
+<li>Port forwarding from local port to the server ports</li>
+</ol>
+</li>
+<li>Connect using the SSH terminal<ol>
+<li>Login with - <code>ssh &lt;username&gt;@&lt;hostname&gt;</code></li>
+</ol>
+</li>
+</ol>
+<h3 id="system-configuration">System Configuration</h3>
+<ul>
+<li>Set the system name   - <code>sudo hostnamectl set-hostname nms</code></li>
+<li>Configure the hostnames - <code>sudo vi /etc/hosts</code></li>
+</ul>
+<h3 id="installing-git">Installing Git</h3>
+<ul>
+<li>Update the system - <code>sudo apt-get update</code></li>
+<li>Install Git - <code>sudo apt-get install git</code></li>
+</ul>
+<h2 id="configure-git">Configure Git</h2>
+<ul>
+<li>Configure Git </li>
+<li><code>git config --global user.name "Your Name"</code></li>
+<li><code>git config --global user.email "Your Email"</code></li>
+</ul>
+<h2 id="download-the-repository">Download the Repository</h2>
+<ul>
+<li>Fork the repository <code>https://github.com/mohitkr05/TelcoBootcamp</code></li>
+<li>Clone the Repository </li>
+<li><code>git clone https://github.com/your-username/TelcoBootcamp.git</code></li>
+</ul></div>
+        
+        
+    </div>
+
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+                <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/languages/yaml.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../.."</script>
+    
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
