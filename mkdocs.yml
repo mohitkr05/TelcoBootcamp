@@ -14,10 +14,17 @@ theme:
     - yaml
 nav:
   - Home: index.md
-  - Introduction:
-    - Introduction to Telecom Bootcamp: introduction-telecom.md
-    - Cloud Computing & Telco Cloud: Cloud-TelcoCloud.md
-    - Git & GitOps: git.md
+  - Notes:
+    - Introduction to Telecom Bootcamp: notes/introduction-telecom.md
+    - Cloud Computing & Telco Cloud: notes/Cloud-TelcoCloud.md
+    - Git & GitOps: notes/git.md
+    - Linux: notes/linux.md
+    - Linux Shell scripting: notes/shellscripting.md
+  - Excercises:
+    - 01 - System Preparation: excercises/preparation.md
+    - 02 - Git Hands-on: excercises/git-handson.md
+  #   - Cloud Computing & Telco Cloud: excercises/Cloud-TelcoCloud.md
+  #   - Git & GitOps: excercises/git.md
     # - Linux and Command Line: linux.md
     # - Shell Scripting: shell-scripting.md
 

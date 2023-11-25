@@ -17,11 +17,11 @@
 
 A communication system conveys information from its source to a destination.
 
-![communication-system](assets/communications-system.png)
+![communication-system](../assets/communications-system.png)
 
 ## Capacity of a channel
 
-![capacity-of-channel](assets/capacity-of-channel.png)
+![capacity-of-channel](../assets/capacity-of-channel.png)
 
 The most important question for a communication channel is the maximum rate at which it can transfer information. 
 There is a theoretical maximum rate at which information passes error free over the channel, called the channel capacity C. 

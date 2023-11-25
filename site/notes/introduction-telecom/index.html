@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Publicly shareable notes for Telecom Bootcamp">
+    <meta name="author" content="Mohit Kumar">
+    
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    
+    <title>Introduction to Telecom Bootcamp - Telecom Bootcamp</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/dracula.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../..">Telecom Bootcamp</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Notes <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li class="active">
+    <a href="./">Introduction to Telecom Bootcamp</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Cloud-TelcoCloud/">Cloud Computing & Telco Cloud</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../git/">Git & GitOps</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../linux/">Linux</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../shellscripting/">Linux Shell scripting</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Excercises <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../excercises/preparation/">01 - System Preparation</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../excercises/git-handson/">02 - Git Hands-on</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../..">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="next" href="../Cloud-TelcoCloud/">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/mohitkr05/TelcoBootcamp/edit/master/docs/notes/introduction-telecom.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#day-1">Day 1</a></li>
+        <li class="first-level "><a href="#introduction-to-telecom">Introduction to Telecom</a></li>
+            <li class="second-level"><a href="#communication-basics">Communication basics</a></li>
+                
+            <li class="second-level"><a href="#communication-systems">Communication systems</a></li>
+                
+            <li class="second-level"><a href="#capacity-of-a-channel">Capacity of a channel</a></li>
+                
+            <li class="second-level"><a href="#what-is-telecommunications">What is telecommunications?</a></li>
+                
+            <li class="second-level"><a href="#what-are-the-changes-that-telecommunications-engineering-tries-to-solve">What are the changes that telecommunications engineering tries to solve?</a></li>
+                
+            <li class="second-level"><a href="#what-are-the-breakthroughs-in-telecommunications-engineering">What are the breakthroughs in telecommunications engineering?</a></li>
+                
+            <li class="second-level"><a href="#generations-of-telecom">Generations of telecom</a></li>
+                
+            <li class="second-level"><a href="#question">Question</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="day-1">Day 1</h1>
+<h1 id="introduction-to-telecom">Introduction to Telecom</h1>
+<h2 id="communication-basics">Communication basics</h2>
+<ul>
+<li>Communication is a process of transfer of information from Sender to Receiver over a communication medium</li>
+<li>Communication medium<ul>
+<li>Verbal communication</li>
+<li>Written communication</li>
+<li>Electronics and Digital communication</li>
+<li>Visual communication</li>
+<li>Print media</li>
+<li>Broadcast media</li>
+<li>Gestures and body language</li>
+</ul>
+</li>
+</ul>
+<h2 id="communication-systems">Communication systems</h2>
+<p>A communication system conveys information from its source to a destination.</p>
+<p><img alt="communication-system" src="../../assets/communications-system.png" /></p>
+<h2 id="capacity-of-a-channel">Capacity of a channel</h2>
+<p><img alt="capacity-of-channel" src="../../assets/capacity-of-channel.png" /></p>
+<p>The most important question for a communication channel is the maximum rate at which it can transfer information. 
+There is a theoretical maximum rate at which information passes error free over the channel, called the channel capacity C. 
+The famous Hartley-Shannon Law states that the channel capacity C is given by: </p>
+<p><code>C=B*log(1+(S/N))</code></p>
+<p>Where, 
+ - B is the bandwidth, 
+ - S/N is the signal-to-noise ratio.</p>
+<h2 id="what-is-telecommunications">What is telecommunications?</h2>
+<p>Telecommunications is the transmission of information over a distance. It encompasses a wide range of technologies, from simple telephone networks to complex fiber optic networks. </p>
+<h2 id="what-are-the-changes-that-telecommunications-engineering-tries-to-solve">What are the changes that telecommunications engineering tries to solve?</h2>
+<p>General challenges in telecommunications engineering include:</p>
+<ul>
+<li>Performance</li>
+<li>Reliability</li>
+<li>Affordability </li>
+</ul>
+<p>Some specific challenges are
+- Increasing the capacity of telecommunications networks to handle more data traffic
+- Reducing the latency of telecommunications networks to improve the responsiveness of applications
+- Expanding the coverage of telecommunications networks to reach more people and places
+- Making telecommunications networks more secure and resilient to attacks
+- Reducing the cost of telecommunications services to make them more affordable for everyone</p>
+<h2 id="what-are-the-breakthroughs-in-telecommunications-engineering">What are the breakthroughs in telecommunications engineering?</h2>
+<table>
+<thead>
+<tr>
+<th>Year</th>
+<th>Innovation/Discovery or Invention</th>
+<th>Wikipedia article</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1832</td>
+<td>Samuel F. B. Morse invents the telegraph</td>
+<td><a href="https://en.wikipedia.org/wiki/Telegraph">Telegraph</a></td>
+</tr>
+<tr>
+<td>1876</td>
+<td>Alexander Graham Bell invents the telephone</td>
+<td><a href="https://en.wikipedia.org/wiki/Telephone">Telephone</a></td>
+</tr>
+<tr>
+<td>1887</td>
+<td>Heinrich Hertz discovers radio waves</td>
+<td><a href="https://en.wikipedia.org/wiki/Radio_wave">Radio wave</a></td>
+</tr>
+<tr>
+<td>1895</td>
+<td>Guglielmo Marconi invents the radio</td>
+<td><a href="https://en.wikipedia.org/wiki/Radio">Radio</a></td>
+</tr>
+<tr>
+<td>1906</td>
+<td>Lee De Forest invents the triode vacuum tube</td>
+<td><a href="https://en.wikipedia.org/wiki/Triode">Triode</a></td>
+</tr>
+<tr>
+<td>1920</td>
+<td>The first commercial radio broadcast is made in Pittsburgh, Pennsylvania</td>
+<td><a href="https://en.wikipedia.org/wiki/Commercial_radio_broadcasting">Commercial radio broadcasting</a></td>
+</tr>
+<tr>
+<td>1927</td>
+<td>Philo T. Farnsworth invents the television</td>
+<td><a href="https://en.wikipedia.org/wiki/Television">Television</a></td>
+</tr>
+<tr>
+<td>1947</td>
+<td>The transistor is invented at Bell Labs</td>
+<td><a href="https://en.wikipedia.org/wiki/Transistor">Transistor</a></td>
+</tr>
+<tr>
+<td>1956</td>
+<td>The integrated circuit is invented at Texas Instruments</td>
+<td><a href="https://en.wikipedia.org/wiki/Integrated_circuit">Integrated circuit</a></td>
+</tr>
+<tr>
+<td>1969</td>
+<td>The first ARPANET node is installed at UCLA</td>
+<td><a href="https://en.wikipedia.org/wiki/ARPANET">ARPANET</a></td>
+</tr>
+<tr>
+<td>1973</td>
+<td>The first mobile phone call is made on a Motorola DynaTAC</td>
+<td><a href="https://en.wikipedia.org/wiki/Mobile_phone">Mobile phone</a></td>
+</tr>
+<tr>
+<td>1974</td>
+<td>Vint Cerf and Bob Kahn develop the Transmission Control Protocol/Internet Protocol (TCP/IP)</td>
+<td><a href="https://en.wikipedia.org/wiki/TCP/IP">TCP/IP</a></td>
+</tr>
+<tr>
+<td>1985</td>
+<td>The first commercial cellular network is launched in the United States</td>
+<td><a href="https://en.wikipedia.org/wiki/Cellular_network">Cellular network</a></td>
+</tr>
+<tr>
+<td>1989</td>
+<td>Tim Berners-Lee invents the World Wide Web</td>
+<td><a href="https://en.wikipedia.org/wiki/World_Wide_Web">World Wide Web</a></td>
+</tr>
+<tr>
+<td>1993</td>
+<td>The first web browser, Mosaic, is released</td>
+<td><a href="https://en.wikipedia.org/wiki/Web_browser">Web browser</a></td>
+</tr>
+<tr>
+<td>1998</td>
+<td>The first commercial satellite internet service is launched</td>
+<td><a href="https://en.wikipedia.org/wiki/Satellite_internet">Satellite internet</a></td>
+</tr>
+<tr>
+<td>2001</td>
+<td>The first 3G cellular network is launched in Japan</td>
+<td><a href="https://en.wikipedia.org/wiki/3G">3G</a></td>
+</tr>
+<tr>
+<td>2009</td>
+<td>The first 4G cellular network is launched in Sweden</td>
+<td><a href="https://en.wikipedia.org/wiki/4G">4G</a></td>
+</tr>
+<tr>
+<td>2019</td>
+<td>The first 5G cellular network is launched in South Korea</td>
+<td><a href="https://en.wikipedia.org/wiki/5G">5G</a></td>
+</tr>
+</tbody>
+</table>
+<p>This is just a small sample of the many breakthroughs in telecommunications engineering over the years. Telecommunications engineering has revolutionized the way we communicate and access information, and it continues to evolve at a rapid pace.</p>
+<h2 id="generations-of-telecom">Generations of telecom</h2>
+<table>
+<thead>
+<tr>
+<th>Primary Motivation</th>
+<th>Year</th>
+<th>Technology</th>
+<th>Details</th>
+<th>Link to Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>To enable mobile communication</td>
+<td>1946</td>
+<td>0G</td>
+<td>Pre-cellular mobile radio telephone systems, such as Mobile Telephone System (MTS) and Advanced Mobile Telephone System (AMTS)</td>
+<td><a href="https://en.wikipedia.org/wiki/0G">Wikipedia article on 0G</a></td>
+</tr>
+<tr>
+<td>To improve the capacity and reliability of mobile communication</td>
+<td>1979</td>
+<td>1G</td>
+<td>Analog cellular networks, such as Advanced Mobile Phone System (AMPS) and Nordic Mobile Telephone (NMT)</td>
+<td><a href="https://en.wikipedia.org/wiki/1G">Wikipedia article on 1G</a></td>
+</tr>
+<tr>
+<td>To introduce digital technology to mobile communication, improving voice quality and data transmission rates</td>
+<td>1991</td>
+<td>2G</td>
+<td>Digital cellular networks, such as Global System for Mobile Communications (GSM) and Code Division Multiple Access (CDMA)</td>
+<td><a href="https://en.wikipedia.org/wiki/2G">Wikipedia article on 2G</a></td>
+</tr>
+<tr>
+<td>To provide high-speed data transmission for mobile devices</td>
+<td>2001</td>
+<td>3G</td>
+<td>Third-generation cellular networks, such as Universal Mobile Telecommunications System (UMTS) and CDMA2000</td>
+<td><a href="https://en.wikipedia.org/wiki/3G">Wikipedia article on 3G</a></td>
+</tr>
+<tr>
+<td>To provide even higher-speed data transmission and lower latency for mobile devices, enabling new applications such as mobile video and mobile broadband</td>
+<td>2009</td>
+<td>4G</td>
+<td>Fourth-generation cellular networks, such as Long-Term Evolution (LTE) and WiMAX</td>
+<td><a href="https://en.wikipedia.org/wiki/4G">Wikipedia article on 4G</a></td>
+</tr>
+<tr>
+<td>To provide extremely high data rates, low latency, and massive connectivity for mobile devices and the Internet of Things (IoT), enabling new applications such as self-driving cars, augmented reality, and virtual reality</td>
+<td>2019</td>
+<td>5G</td>
+<td>Fifth-generation cellular networks</td>
+<td><a href="https://en.wikipedia.org/wiki/5G">Wikipedia article on 5G</a></td>
+</tr>
+<tr>
+<td>To further improve the performance and capabilities of 5G, enabling new applications such as 6G-enabled smart cities and factories</td>
+<td>2030 (planned)</td>
+<td>6G</td>
+<td>Sixth-generation cellular networks</td>
+<td><a href="https://en.wikipedia.org/wiki/6G">Wikipedia article on 6G</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="question">Question</h2>
+<p>What are some standards that help in adoption of the technologies across world?</p></div>
+        
+        
+    </div>
+
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+                <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/languages/yaml.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../.."</script>
+    
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

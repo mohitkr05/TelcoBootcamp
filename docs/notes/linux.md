@@ -1,7 +1,5 @@
 # Linux
 
-
-
 ## Linux command Line hands on
 
 This tutorial is for a quick hands on demo for the class. A detailed hands on is based on the Linux Command Line handbook.

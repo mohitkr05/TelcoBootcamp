@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Publicly shareable notes for Telecom Bootcamp">
+    <meta name="author" content="Mohit Kumar">
+    
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    
+    <title>Linux - Telecom Bootcamp</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/dracula.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../..">Telecom Bootcamp</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Notes <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../introduction-telecom/">Introduction to Telecom Bootcamp</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Cloud-TelcoCloud/">Cloud Computing & Telco Cloud</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../git/">Git & GitOps</a>
+</li>
+
+                        
+                            
+<li class="active">
+    <a href="./">Linux</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../shellscripting/">Linux Shell scripting</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Excercises <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../excercises/preparation/">01 - System Preparation</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../excercises/git-handson/">02 - Git Hands-on</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../git/">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="next" href="../shellscripting/">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/mohitkr05/TelcoBootcamp/edit/master/docs/notes/linux.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#linux">Linux</a></li>
+            <li class="second-level"><a href="#linux-command-line-hands-on">Linux command Line hands on</a></li>
+                
+            <li class="second-level"><a href="#getting-to-know-the-system">Getting to know the system</a></li>
+                
+            <li class="second-level"><a href="#understanding-the-filesystem">Understanding the filesystem</a></li>
+                
+                <li class="third-level"><a href="#basic-filesystem-structure">Basic Filesystem Structure:</a></li>
+                <li class="third-level"><a href="#file-system-navigation">File system navigation</a></li>
+            <li class="second-level"><a href="#file-permissions-and-ownerships">File permissions and ownerships</a></li>
+                
+                <li class="third-level"><a href="#file-permissions">File Permissions:</a></li>
+                <li class="third-level"><a href="#file-ownership">File Ownership:</a></li>
+                <li class="third-level"><a href="#commands-for-file-permissions-and-ownership">Commands for File Permissions and Ownership:</a></li>
+            <li class="second-level"><a href="#checking-the-hardware">Checking the hardware</a></li>
+                
+            <li class="second-level"><a href="#processes">Processes</a></li>
+                
+            <li class="second-level"><a href="#understanding-users-and-groups">Understanding users and Groups</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="linux">Linux</h1>
+<h2 id="linux-command-line-hands-on">Linux command Line hands on</h2>
+<p>This tutorial is for a quick hands on demo for the class. A detailed hands on is based on the Linux Command Line handbook.</p>
+<h2 id="getting-to-know-the-system">Getting to know the system</h2>
+<ul>
+<li><code>uname -a</code>: Display system information including kernel version, hostname, and architecture.</li>
+<li><code>hostname</code>: Show or set the system's hostname.</li>
+<li><code>lsb_release -a</code>: Display distribution-specific information.</li>
+<li><code>cat /etc/os-release</code>: View information about the operating system.</li>
+<li><code>cat /proc/version</code>: Show Linux kernel version and information.</li>
+<li><code>uptime</code>: Display how long the system has been running.</li>
+<li><code>date</code>: Show the current date and time.</li>
+<li><code>cal</code>: Display a calendar.</li>
+<li><code>w</code>: Show who is logged in and what they are doing.</li>
+<li><code>whoami</code>: Display the username of the current user.</li>
+<li><code>id</code>: Display user and group information.</li>
+</ul>
+<h2 id="understanding-the-filesystem">Understanding the filesystem</h2>
+<h3 id="basic-filesystem-structure">Basic Filesystem Structure:</h3>
+<ul>
+<li>/ (Root Directory): The top-level directory of the filesystem hierarchy.</li>
+<li>/bin: Essential system binaries (commands) needed for system repair and recovery.</li>
+<li>/sbin: System binaries specifically used for system administration tasks.</li>
+<li>/etc: Configuration files and directories.</li>
+<li>/home: Home directories for users.</li>
+<li>/var: Variable data, such as logs, spool files, and temporary files.</li>
+<li>/tmp: Temporary files.</li>
+<li>/usr: User-related programs and files.</li>
+<li>/lib and /lib64: Essential shared libraries needed for system boot.</li>
+<li>/dev: Device files representing hardware devices.</li>
+<li>/proc: A virtual filesystem that provides information about processes and kernel parameters.</li>
+</ul>
+<h3 id="file-system-navigation">File system navigation</h3>
+<ul>
+<li><code>pwd</code>: Print the current working directory.</li>
+<li><code>ls</code>: List directory contents.</li>
+<li><code>cd</code>: Change directory.</li>
+<li><code>cp</code>: Copy files or directories.</li>
+<li><code>mv</code>: Move or rename files or directories.</li>
+<li><code>rm</code>: Remove files or directories.</li>
+<li><code>file</code>: Determine file type.</li>
+<li><code>stat</code>: Display detailed file or filesystem status.</li>
+<li><code>du</code>: Estimate file space usage.</li>
+<li><code>df</code>: Display disk space usage.</li>
+<li><code>cat</code>: Concatenate and display file content.</li>
+</ul>
+<h2 id="file-permissions-and-ownerships">File permissions and ownerships</h2>
+<p>File permissions and ownership are crucial aspects of Linux file system security. They determine who can access, modify, or execute files and directories. Each file and directory has an associated owner, group, and a set of permissions for three categories of users: owner, group, and others.</p>
+<h3 id="file-permissions">File Permissions:</h3>
+<ul>
+<li>Read (r): Allows the reading of a file's contents or viewing a directory's listing.</li>
+<li>Write (w): Permits the modification of a file's contents or the creation and deletion of files within a directory.</li>
+<li>Execute (x): Grants the ability to execute a file or traverse a directory.</li>
+</ul>
+<h3 id="file-ownership">File Ownership:</h3>
+<ul>
+<li>Owner: The user who owns the file. This user has special permissions to read, write, and execute the file.</li>
+<li>Group: A set of users who share the same permissions on the file. Files can belong to a user and a group.</li>
+</ul>
+<h3 id="commands-for-file-permissions-and-ownership">Commands for File Permissions and Ownership:</h3>
+<ul>
+<li><code>chmod</code> -  Change Mode - Used to change file or directory permissions.<ul>
+<li><code>chmod permissions filename</code></li>
+<li><code>chmod u+rw filename</code></li>
+<li><code>chmod o-w filename</code></li>
+</ul>
+</li>
+<li><code>chown</code> - Change Owner - Used to change the owner of a file or directory. <ul>
+<li><code>chown user:group filename</code></li>
+<li><code>chown john filename</code></li>
+</ul>
+</li>
+<li><code>chgrp</code> - Change Group - Used to change the group ownership of a file or directory.<ul>
+<li><code>chgrp groupname filename</code></li>
+<li><code>chgrp staff filename</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="checking-the-hardware">Checking the hardware</h2>
+<ul>
+<li><code>df -h</code>: Display disk space usage in a human-readable format.</li>
+<li><code>free -m</code>: Display the amount of free and used memory in megabytes.</li>
+<li><code>lscpu</code>: Display CPU information.</li>
+<li><code>lsblk</code>: List block devices (disks and partitions).</li>
+<li><code>lshw</code>: List hardware information.</li>
+<li><code>lspci</code>: Display PCI devices.</li>
+<li><code>lsusb</code>: Display USB devices.</li>
+<li><code>ifconfig</code> or <code>ip a</code>: Show network interfaces and their configurations.</li>
+<li><code>route -n</code>: Display the routing table.</li>
+<li><code>cat /etc/resolv.conf</code>: View DNS configuration.</li>
+</ul>
+<h2 id="processes">Processes</h2>
+<ul>
+<li><code>ps aux</code>: Display information about all running processes.</li>
+<li><code>top</code>: Display dynamic real-time information about running processes.</li>
+<li><code>systemctl list-units --type=service</code>: List all active services.</li>
+</ul>
+<h2 id="understanding-users-and-groups">Understanding users and Groups</h2>
+<ul>
+<li><code>useradd</code> - To add a user - e.g. <code>sudo useradd username</code> </li>
+<li><code>userdel</code> - To delete a user - e.g. <code>sudo userdel username</code></li>
+<li><code>groupadd</code> - To add a group - e.g.<code>sudo groupadd groupname</code></li>
+<li><code>groupdel</code> - To delete a group - e.g. <code>sudo groupdel groupname</code></li>
+<li><code>usermod</code> -  Add user to group - e.g. <code>sudo usermod -a -G groupname username</code></li>
+<li><code>su</code>- Switch user - e.g. <code>su username</code></li>
+</ul></div>
+        
+        
+    </div>
+
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+                <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/languages/yaml.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../.."</script>
+    
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

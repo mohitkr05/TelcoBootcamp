@@ -27,6 +27,37 @@ Key concepts of GitOps:
 - **Automation**: GitOps relies heavily on automation to continuously monitor the Git repository for changes and automatically apply those changes to the target environment. Continuous Deployment (CD) pipelines are often used to automate the deployment process.
 - **Reconciliation**: The actual state of the system is continuously compared with the declared state in the Git repository, and any deviations are automatically corrected. This ensures that the system is always in the desired state.
 
+
+
+## Infrastructure as Code
+
+Infrastructure as Code (IaC) for Network Ops refers to the practice of using code to automate the provisioning, configuration, and management of network infrastructure in a telecom environment. This approach brings several benefits to the telecom industry, improving efficiency, reliability, and scalability. Here's how IaC for Network Ops helps in the telecom sector:
+
+- Automation and Efficiency:
+  - Rapid Deployment: IaC allows for the rapid and consistent deployment of network infrastructure. Telecom operators can automate the provisioning of networking components, reducing the time it takes to set up new services or make changes to existing ones.
+  - Consistency: IaC ensures that the network configuration is consistent across different environments. This reduces the chances of errors caused by manual configuration and enhances overall network reliability.
+
+- Scalability:
+   - Elasticity: Telecom networks often need to scale up or down based on demand. IaC enables dynamic scaling by automatically adjusting the network infrastructure to accommodate changes in traffic or service requirements.
+
+- Version Control and Rollbacks:
+   - Versioning: IaC tools enable version control for network configurations. This means that changes to the network can be tracked over time, and different versions can be managed.
+   - Rollback Capabilities: In case of issues or failures, IaC allows for easy rollback to a previous version of the network configuration. This helps in quickly reverting to a known and working state.
+
+- Collaboration and Documentation:
+   - Collaboration: IaC facilitates collaboration among network operations teams by allowing them to work on the same codebase. This promotes better communication and coordination in managing network infrastructure.
+   - Documentation: The code itself serves as documentation for the network configuration. This makes it easier for teams to understand how the network is set up and configured, improving knowledge sharing and troubleshooting.
+
+- Policy Compliance:
+   - Enforcement of Policies: IaC can be used to enforce network policies and compliance standards. This ensures that the network configurations adhere to security, regulatory, and operational requirements.
+
+- Testing and Validation:
+    - Automated Testing: IaC allows for the creation of automated tests to validate network configurations before deployment. This helps catch potential issues early in the development process, reducing the likelihood of errors in the live network.
+
+- Cost Optimization:
+    - Resource Optimization: IaC can help optimize resource usage by dynamically adjusting network resources based on demand. This can lead to cost savings by ensuring that resources are allocated efficiently.
+
+
 ## GitOps in Telecom
 
 - **Repository Structure**:
@@ -67,125 +98,127 @@ Key concepts of GitOps:
 
 - Configure Git:
 
-    ```bash
-        git config --global user.name "Your Name"
-        git config --global user.email "your.email@example.com"
-    ```
+```bash
+    git config --global user.name "Your Name"
+    git config --global user.email "your.email@example.com"
+```
 
 - Initialize a Git Repository
-  ```bash
+
+```bash
   git init
-  ```
+```
   
 - Clone a Repository:
 
- ```bash
+```bash
     git clone <repository_url>
- ```
- Creates a copy of a remote repository on your local machine.
+```
+Creates a copy of a remote repository on your local machine.
 
 ## Working with Changes
 
 - Check Status:
 
-   ```bash
+```bash
    git status
-   ```
-   Shows the status of changes as untracked, modified, or staged.
+```
+Shows the status of changes as untracked, modified, or staged.
 
 - Stage Changes:
 
-    ```bash
+```bash
     git add <file(s)>
-    ```
- Adds changes to the staging area in preparation for a commit.
+```
+Adds changes to the staging area in preparation for a commit.
 
 - Commit Changes:
 
-    ```bash
-        git commit -m "Commit message"
-    ```
-    Records staged changes with a descriptive commit message.
+```bash
+    git commit -m "Commit message"
+```
+Records staged changes with a descriptive commit message.
 
 
 ## Branching and Merging
 
 - Create a Branch:
 
-    ```bash
-    git branch <branch_name>
-    ```
-    Creates a new branch.
+```bash
+   git branch <branch_name>
+```
+Creates a new branch.
 
 - Switch Branch:
-    ```bash
-    git checkout <branch_name>
-    ```
-    Switches to the specified branch.
+```bash
+  git checkout <branch_name>
+```
+Switches to the specified branch.
 
 - Merge Branch:
-    ```bash
-    git merge <branch_name>
-    ```
-    Combines changes from the specified branch into the current branch.
+ ```bash
+   git merge <branch_name>
+``
+Combines changes from the specified branch into the current branch.
 
 ### Working with Remotes
 
 - Add a Remote Repository:
-   ```bash
-   git remote add <remote_name> <remote_url>
-    ```
-    Adds a remote repository.
+```bash
+ git remote add <remote_name> <remote_url>
+```
+Adds a remote repository.
 
 - Push Changes to a Remote Repository:
 
-    ```bash
-    git push <remote_name> <branch_name>
-    ```
-    Pushes committed changes to a remote repository.
+```bash
+   git push <remote_name> <branch_name>
+```
+Pushes committed changes to a remote repository.
 
 - Pull Changes from a Remote Repository:
 
-    ```bash
+```bash
     git pull <remote_name> <branch_name>
-    ```
-    Fetches and merges changes from a remote repository.
+```
+Fetches and merges changes from a remote repository.
 
 ### Checking History
 
 - View Commit History:
 
-    ```bash
+```bash
     git log
-    ```
-    Displays a log of commits.
+```
+Displays a log of commits.
 
 - Show Changes in a Commit:
 
-    ```bash
+```bash
     git show <commit_hash>
-    ```
-    Displays the changes introduced by a specific commit.
+```
+Displays the changes introduced by a specific commit.
 
 
 1. Downloading and installing Git : If you don't already have Git installed, you can download Git at www.git-scm.com.
-    > If you need additional assistance installing Git, you can find more information in the ProGit chapter on installing Git.
+> If you need additional assistance installing Git, you can find more information in the ProGit chapter on installing Git.
 
 Now is a good time to create a shortcut to the command-line application you will want to use with Git:
 
-    If you are working on Windows, It is highly recommended to use Git Bash which is installed with the Git package, so that you can follow along with the facilitator who will be using Bash
-    If you are working on macOS or another Unix-like system, you can use the built-in Terminal application
+> If you are working on Windows, It is highly recommended to use Git Bash which is installed with the Git package, so that you can follow along with the facilitator who will be using Bash.If you are working on macOS or another Unix-like system, you can use the built-in Terminal application
 
 
 2. Clone the following repository
 
 Open your chosen shell, and type:
 
-`git clone https://github.com/mohitkr05/TelcoBootcamp.git`
+```bash
+git clone https://github.com/mohitkr05/TelcoBootcamp.git
+```
 
 If the clone is successful you'll see:
 
-```
+```bash
 $ git clone https://github.com/mohitkr05/TelcoBootcamp.git
 Cloning into 'TelcoBootcamp'...
 remote: Counting objects: 6, done.
@@ -197,6 +230,6 @@ Unpacking objects: 100% (6/6), done.
 
 
 3. Assignment
-- [Excercise -  Git](E1-git-commands.md)
+- [Excercise -  Git](../excercises/git-handson.md)
 - Read the Pro Git Ebook
 - Watch the Linux command line video

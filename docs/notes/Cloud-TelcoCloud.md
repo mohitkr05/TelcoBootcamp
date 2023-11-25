@@ -13,7 +13,7 @@
 
 ## What we are trying to achieve
 
-![Target architecture](assets/architecture-setup.drawio.png)
+![Target architecture](../assets/architecture-setup.drawio.png)
 
 
 ## Understanding Cloud Computing
