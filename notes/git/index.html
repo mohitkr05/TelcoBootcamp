@@ -170,6 +170,8 @@
                 
             <li class="second-level"><a href="#what-is-gitops">What is GitOps</a></li>
                 
+            <li class="second-level"><a href="#infrastructure-as-code">Infrastructure as Code</a></li>
+                
             <li class="second-level"><a href="#gitops-in-telecom">GitOps in Telecom</a></li>
                 
             <li class="second-level"><a href="#working-with-git">Working with Git</a></li>
@@ -213,6 +215,53 @@
 <li><strong>Versioned Configuration</strong>: Git provides version control for the entire system configuration. This allows for easy rollback to a previous state and provides an audit trail of changes over time.</li>
 <li><strong>Automation</strong>: GitOps relies heavily on automation to continuously monitor the Git repository for changes and automatically apply those changes to the target environment. Continuous Deployment (CD) pipelines are often used to automate the deployment process.</li>
 <li><strong>Reconciliation</strong>: The actual state of the system is continuously compared with the declared state in the Git repository, and any deviations are automatically corrected. This ensures that the system is always in the desired state.</li>
+</ul>
+<h2 id="infrastructure-as-code">Infrastructure as Code</h2>
+<p>Infrastructure as Code (IaC) for Network Ops refers to the practice of using code to automate the provisioning, configuration, and management of network infrastructure in a telecom environment. This approach brings several benefits to the telecom industry, improving efficiency, reliability, and scalability. Here's how IaC for Network Ops helps in the telecom sector:</p>
+<ul>
+<li>Automation and Efficiency:</li>
+<li>Rapid Deployment: IaC allows for the rapid and consistent deployment of network infrastructure. Telecom operators can automate the provisioning of networking components, reducing the time it takes to set up new services or make changes to existing ones.</li>
+<li>
+<p>Consistency: IaC ensures that the network configuration is consistent across different environments. This reduces the chances of errors caused by manual configuration and enhances overall network reliability.</p>
+</li>
+<li>
+<p>Scalability:</p>
+</li>
+<li>
+<p>Elasticity: Telecom networks often need to scale up or down based on demand. IaC enables dynamic scaling by automatically adjusting the network infrastructure to accommodate changes in traffic or service requirements.</p>
+</li>
+<li>
+<p>Version Control and Rollbacks:</p>
+</li>
+<li>Versioning: IaC tools enable version control for network configurations. This means that changes to the network can be tracked over time, and different versions can be managed.</li>
+<li>
+<p>Rollback Capabilities: In case of issues or failures, IaC allows for easy rollback to a previous version of the network configuration. This helps in quickly reverting to a known and working state.</p>
+</li>
+<li>
+<p>Collaboration and Documentation:</p>
+</li>
+<li>Collaboration: IaC facilitates collaboration among network operations teams by allowing them to work on the same codebase. This promotes better communication and coordination in managing network infrastructure.</li>
+<li>
+<p>Documentation: The code itself serves as documentation for the network configuration. This makes it easier for teams to understand how the network is set up and configured, improving knowledge sharing and troubleshooting.</p>
+</li>
+<li>
+<p>Policy Compliance:</p>
+</li>
+<li>
+<p>Enforcement of Policies: IaC can be used to enforce network policies and compliance standards. This ensures that the network configurations adhere to security, regulatory, and operational requirements.</p>
+</li>
+<li>
+<p>Testing and Validation:</p>
+<ul>
+<li>Automated Testing: IaC allows for the creation of automated tests to validate network configurations before deployment. This helps catch potential issues early in the development process, reducing the likelihood of errors in the live network.</li>
+</ul>
+</li>
+<li>
+<p>Cost Optimization:</p>
+<ul>
+<li>Resource Optimization: IaC can help optimize resource usage by dynamically adjusting network resources based on demand. This can lead to cost savings by ensuring that resources are allocated efficiently.</li>
+</ul>
+</li>
 </ul>
 <h2 id="gitops-in-telecom">GitOps in Telecom</h2>
 <ul>
@@ -282,117 +331,110 @@
 </ul>
 <h2 id="working-with-git">Working with Git</h2>
 <ul>
-<li>
-<p>Configure Git:</p>
-<p><code>bash
-    git config --global user.name "Your Name"
-    git config --global user.email "your.email@example.com"</code></p>
-</li>
-<li>
-<p>Initialize a Git Repository
-  <code>bash
-  git init</code></p>
-</li>
-<li>
-<p>Clone a Repository:</p>
-</li>
+<li>Configure Git:</li>
 </ul>
-<p><code>bash
-    git clone &lt;repository_url&gt;</code>
- Creates a copy of a remote repository on your local machine.</p>
+<pre><code class="language-bash">    git config --global user.name &quot;Your Name&quot;
+    git config --global user.email &quot;your.email@example.com&quot;
+</code></pre>
+<ul>
+<li>Initialize a Git Repository</li>
+</ul>
+<pre><code class="language-bash">  git init
+</code></pre>
+<ul>
+<li>Clone a Repository:</li>
+</ul>
+<pre><code class="language-bash">    git clone &lt;repository_url&gt;
+</code></pre>
+<p>Creates a copy of a remote repository on your local machine.</p>
 <h2 id="working-with-changes">Working with Changes</h2>
 <ul>
 <li>Check Status:</li>
 </ul>
-<p><code>bash
-   git status</code>
-   Shows the status of changes as untracked, modified, or staged.</p>
+<pre><code class="language-bash">   git status
+</code></pre>
+<p>Shows the status of changes as untracked, modified, or staged.</p>
 <ul>
-<li>
-<p>Stage Changes:</p>
-<p><code>bash
-git add &lt;file(s)&gt;</code>
- Adds changes to the staging area in preparation for a commit.</p>
-</li>
-<li>
-<p>Commit Changes:</p>
-<p><code>bash
-    git commit -m "Commit message"</code>
-Records staged changes with a descriptive commit message.</p>
-</li>
+<li>Stage Changes:</li>
 </ul>
+<pre><code class="language-bash">    git add &lt;file(s)&gt;
+</code></pre>
+<p>Adds changes to the staging area in preparation for a commit.</p>
+<ul>
+<li>Commit Changes:</li>
+</ul>
+<pre><code class="language-bash">    git commit -m &quot;Commit message&quot;
+</code></pre>
+<p>Records staged changes with a descriptive commit message.</p>
 <h2 id="branching-and-merging">Branching and Merging</h2>
 <ul>
-<li>
-<p>Create a Branch:</p>
-<p><code>bash
-git branch &lt;branch_name&gt;</code>
-Creates a new branch.</p>
-</li>
-<li>
-<p>Switch Branch:
-    <code>bash
-    git checkout &lt;branch_name&gt;</code>
-    Switches to the specified branch.</p>
-</li>
-<li>
-<p>Merge Branch:
-    <code>bash
-    git merge &lt;branch_name&gt;</code>
-    Combines changes from the specified branch into the current branch.</p>
-</li>
+<li>Create a Branch:</li>
+</ul>
+<pre><code class="language-bash">   git branch &lt;branch_name&gt;
+</code></pre>
+<p>Creates a new branch.</p>
+<ul>
+<li>Switch Branch:</li>
+</ul>
+<pre><code class="language-bash">  git checkout &lt;branch_name&gt;
+</code></pre>
+<p>Switches to the specified branch.</p>
+<ul>
+<li>Merge Branch:
+ <code>`bash
+   git merge &lt;branch_name&gt;</code>
+Combines changes from the specified branch into the current branch.</li>
 </ul>
 <h3 id="working-with-remotes">Working with Remotes</h3>
 <ul>
-<li>
-<p>Add a Remote Repository:
-   <code>bash
-   git remote add &lt;remote_name&gt; &lt;remote_url&gt;</code>
-    Adds a remote repository.</p>
-</li>
-<li>
-<p>Push Changes to a Remote Repository:</p>
-<p><code>bash
-git push &lt;remote_name&gt; &lt;branch_name&gt;</code>
-Pushes committed changes to a remote repository.</p>
-</li>
-<li>
-<p>Pull Changes from a Remote Repository:</p>
-<p><code>bash
-git pull &lt;remote_name&gt; &lt;branch_name&gt;</code>
-Fetches and merges changes from a remote repository.</p>
-</li>
+<li>Add a Remote Repository:</li>
 </ul>
+<pre><code class="language-bash"> git remote add &lt;remote_name&gt; &lt;remote_url&gt;
+</code></pre>
+<p>Adds a remote repository.</p>
+<ul>
+<li>Push Changes to a Remote Repository:</li>
+</ul>
+<pre><code class="language-bash">   git push &lt;remote_name&gt; &lt;branch_name&gt;
+</code></pre>
+<p>Pushes committed changes to a remote repository.</p>
+<ul>
+<li>Pull Changes from a Remote Repository:</li>
+</ul>
+<pre><code class="language-bash">    git pull &lt;remote_name&gt; &lt;branch_name&gt;
+</code></pre>
+<p>Fetches and merges changes from a remote repository.</p>
 <h3 id="checking-history">Checking History</h3>
 <ul>
-<li>
-<p>View Commit History:</p>
-<p><code>bash
-git log</code>
-Displays a log of commits.</p>
-</li>
-<li>
-<p>Show Changes in a Commit:</p>
-<p><code>bash
-git show &lt;commit_hash&gt;</code>
-Displays the changes introduced by a specific commit.</p>
-</li>
-<li>
-<p>Downloading and installing Git : If you don't already have Git installed, you can download Git at www.git-scm.com.
-    &gt; If you need additional assistance installing Git, you can find more information in the ProGit chapter on installing Git.</p>
-</li>
+<li>View Commit History:</li>
 </ul>
-<p>Now is a good time to create a shortcut to the command-line application you will want to use with Git:</p>
-<pre><code>If you are working on Windows, It is highly recommended to use Git Bash which is installed with the Git package, so that you can follow along with the facilitator who will be using Bash
-If you are working on macOS or another Unix-like system, you can use the built-in Terminal application
+<pre><code class="language-bash">    git log
 </code></pre>
+<p>Displays a log of commits.</p>
+<ul>
+<li>Show Changes in a Commit:</li>
+</ul>
+<pre><code class="language-bash">    git show &lt;commit_hash&gt;
+</code></pre>
+<p>Displays the changes introduced by a specific commit.</p>
+<ol>
+<li>Downloading and installing Git : If you don't already have Git installed, you can download Git at www.git-scm.com.<blockquote>
+<p>If you need additional assistance installing Git, you can find more information in the ProGit chapter on installing Git.</p>
+</blockquote>
+</li>
+</ol>
+<p>Now is a good time to create a shortcut to the command-line application you will want to use with Git:</p>
+<blockquote>
+<p>If you are working on Windows, It is highly recommended to use Git Bash which is installed with the Git package, so that you can follow along with the facilitator who will be using Bash.If you are working on macOS or another Unix-like system, you can use the built-in Terminal application</p>
+</blockquote>
 <ol>
 <li>Clone the following repository</li>
 </ol>
 <p>Open your chosen shell, and type:</p>
-<p><code>git clone https://github.com/mohitkr05/TelcoBootcamp.git</code></p>
+<pre><code class="language-bash">git clone https://github.com/mohitkr05/TelcoBootcamp.git
+</code></pre>
 <p>If the clone is successful you'll see:</p>
-<pre><code>$ git clone https://github.com/mohitkr05/TelcoBootcamp.git
+<pre><code class="language-bash">$ git clone https://github.com/mohitkr05/TelcoBootcamp.git
 Cloning into 'TelcoBootcamp'...
 remote: Counting objects: 6, done.
 remote: Compressing objects: 100% (2/2), done.
