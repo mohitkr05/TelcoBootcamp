@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Publicly shareable notes for Telecom Bootcamp">
+    <meta name="author" content="Mohit Kumar">
+    
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    
+    <title>Linux networking explained - Telecom Bootcamp</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/dracula.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../..">Telecom Bootcamp</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Notes <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../introduction-telecom/">Introduction to Telecom Bootcamp</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Cloud-TelcoCloud/">Cloud Computing & Telco Cloud</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../git/">Git & GitOps</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../linux/">Linux</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../shellscripting/">Linux Shell scripting</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Excercises <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../excercises/preparation/">01 - System Preparation</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../excercises/git-handson/">02 - Git Hands-on</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/mohitkr05/TelcoBootcamp/edit/master/docs/notes/linux-networking.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#linux-networking-explained">Linux networking explained</a></li>
+            <li class="second-level"><a href="#network-interface-cards-nics">Network Interface Cards (NICs)</a></li>
+                
+                <li class="third-level"><a href="#how-to-check-nics-in-linux">How to check NICs in Linux</a></li>
+                <li class="third-level"><a href="#validate-arps">Validate arps</a></li>
+            <li class="second-level"><a href="#validate-the-routes">Validate the routes</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="linux-networking-explained">Linux networking explained</h1>
+<h2 id="network-interface-cards-nics">Network Interface Cards (NICs)</h2>
+<ul>
+<li>NICs are physical components that allow a Linux system to connect to a network.</li>
+<li>Each NIC has a unique MAC address, which is used for network identification.</li>
+<li>Common NIC types include Ethernet, Wi-Fi, and fiber optics.</li>
+</ul>
+<h3 id="how-to-check-nics-in-linux">How to check NICs in Linux</h3>
+<ul>
+<li><code>ifconfig</code></li>
+</ul>
+<pre><code>enp0s3: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+        inet 10.0.2.15  netmask 255.255.255.0  broadcast 10.0.2.255
+        inet6 xxxx::xxxxx:xxxx:xxxx:3xxx  prefixlen 64  scopeid 0x20&lt;link&gt;
+        ether xx:xx:xx:xx:xx:xx  txqueuelen 1000  (Ethernet)
+        RX packets 93930  bytes 136962512 (136.9 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 16935  bytes 1228243 (1.2 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+</code></pre>
+<p>In the above outpuit the following details are captured</p>
+<ul>
+<li><code>enp0s3</code>: NIC name</li>
+<li><code>flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;</code>: NIC flags</li>
+<li><code>mtu 1500</code>: Maximum transmission unit</li>
+<li><code>inet 10.0.2.15</code>: IP address</li>
+<li><code>netmask 255.255.255.0</code>: Subnet mask</li>
+<li><code>inet6 xxxx::xx:xxxx:xxxx:xxxx</code> - IPv6 Address</li>
+<li><code>xxxx::xx:xxxx:xxxx:xxxx</code> - IPv6 link-local address .</li>
+<li><code>prefixlen 64</code> - The prefix length for the IPv6 address is 64 bits, which is a common configuration for local networks.</li>
+<li><code>scopeid 0x20&lt;link&gt;</code> - Scope ID: This indicates the scope of the address, which is link-local (only valid in the local network segment).</li>
+<li><code>MAC Address: ether 02:d2:x6:x7:xd:x7</code> - The hardware MAC address of the network interface</li>
+<li><code>txqueuelen 1000</code>: The transmit queue length is set to 1000.</li>
+<li>RX (Recieve) Statistics:<ul>
+<li>RX packets 93930: The number of received packets is 93,930.</li>
+<li>bytes 136962512 (136.9 MB): The total size of received data is approximately 136.9 MB.</li>
+<li>RX errors 0: No receive errors.</li>
+<li>dropped 0: No dropped packets.</li>
+<li>overruns 0: No overruns.</li>
+<li>frame 0: No frame errors.</li>
+</ul>
+</li>
+<li>TX (Transmit) Statistics:<ul>
+<li>TX packets 16935: The number of transmitted packets is 16,935.</li>
+<li>bytes 1228243 (1.2 MB): The total size of transmitted data is approximately 1.2 MB.</li>
+<li>TX errors 0: No transmit errors.</li>
+<li>dropped 0: No dropped packets.</li>
+<li>overruns 0: No overruns.</li>
+<li>carrier 0: No carrier errors.</li>
+<li>collisions 0: No collisions.</li>
+</ul>
+</li>
+</ul>
+<h3 id="validate-arps">Validate arps</h3>
+<p>The ip to mac resolution is handled by the layer two broadcast protocol arp. The arp table
+can be displayed with the arp tool. The screenshot below shows the list of computers that
+this computer recently communicated with</p>
+<pre><code># arp
+Address                  HWtype  HWaddress           Flags Mask            Iface
+10.0.2.3                 ether   ----:--:--:--:--:--   C                     enp0s3
+_gateway                 ether   ----:--:--:--:--:--   C                     enp0s3
+</code></pre>
+<h2 id="validate-the-routes">Validate the routes</h2>
+<p>View the route table with <code>netstat -r</code> or <code>route</code></p>
+<pre><code># route
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+default         _gateway        0.0.0.0         UG    100    0        0 enp0s3
+10.0.2.0        0.0.0.0         255.255.255.0   U     100    0        0 enp0s3
+_gateway        0.0.0.0         255.255.255.255 UH    100    0        0 enp0s3
+10.0.2.3        0.0.0.0         255.255.255.255 UH    100    0        0 enp0s3
+192.168.56.0    0.0.0.0         255.255.255.0   U     0      0        0 enp0s8
+
+</code></pre>
+<ol>
+<li>
+<p>TCP/IP Protocol Stack</p>
+<p>TCP/IP is the standard networking protocol suite used in Linux systems.
+It consists of a layered model, with each layer responsible for specific tasks.
+Key layers include the Link Layer, Internet Layer, Transport Layer, and Application Layer.</p>
+</li>
+<li>
+<p>IP Addressing</p>
+<p>IP addresses are unique identifiers assigned to devices on a network.
+IPv4 addresses are 32-bit numbers, while IPv6 addresses are 128-bit numbers.
+IP addresses are used to route data packets between devices on the network.</p>
+</li>
+<li>
+<p>Subnetting</p>
+<p>Subnetting is the process of dividing a network into smaller subnets.
+Subnets are created by dividing the IP address into a network portion and a host portion.
+Subnetting improves network performance and security.</p>
+</li>
+<li>
+<p>Network Routing</p>
+<p>Routing is the process of directing data packets to their intended destinations.
+Routers are devices that forward data packets based on their IP addresses.
+Linux systems can act as routers, forwarding traffic between networks.</p>
+</li>
+<li>
+<p>Network Services</p>
+<p>Linux systems can provide a variety of network services, such as web servers, email servers, and file servers.
+These services allow Linux systems to share resources and communicate with other devices on the network.</p>
+</li>
+<li>
+<p>Network Security</p>
+<p>Network security is essential for protecting Linux systems from unauthorized access and attacks.
+Firewalls, intrusion detection systems (IDS), and encryption are common security measures.
+Linux systems offer various security tools and configurations to protect against network threats.</p>
+</li>
+<li>
+<p>Network Troubleshooting</p>
+<p>Network troubleshooting involves identifying and resolving network problems.
+Common troubleshooting tools include ping, netstat, and ifconfig.
+Understanding network protocols and concepts is crucial for effective troubleshooting.</p>
+</li>
+<li>
+<p>Network Configuration</p>
+<p>Network configuration involves setting up and managing network settings on Linux systems.
+This includes configuring IP addresses, network interfaces, and routing tables.
+Network configuration tools vary depending on the Linux distribution.</p>
+</li>
+<li>
+<p>Network Monitoring</p>
+<p>Network monitoring involves tracking and analyzing network performance and health.
+Monitoring tools provide insights into network traffic, resource utilization, and potential issues.
+Continuous network monitoring helps maintain network stability and identify potential problems early on.</p>
+</li>
+<li>
+<p>Sockets</p>
+</li>
+<li>
+<p>Sockets are fundamental building blocks of network communication in Linux, providing a standardized way for processes to exchange data across a network. </p>
+</li>
+<li>They act as endpoints for communication, allowing processes to send and receive data over a network connection. </li>
+<li>Sockets are essential for implementing various network applications, such as web servers, file transfer clients, and chat programs.</li>
+</ol>
+<p>Linux supports two primary types of sockets:</p>
+<ul>
+<li>
+<p>Stream sockets: These sockets provide a reliable, byte-oriented, and ordered data transmission. They maintain a connection between the communicating parties and ensure data delivery in the correct sequence. Stream sockets are commonly used for protocols like TCP, which is the foundation for many network applications like web browsing and file transfers.</p>
+</li>
+<li>
+<p>Datagram sockets: These sockets provide an unreliable, message-oriented, and unordered data transmission. They send data as individual packets, without maintaining a connection between the communicating parties. Datagram sockets are suitable for protocols like UDP, which is often used for applications where speed and low overhead are prioritized over reliable delivery, such as real-time streaming or gaming.</p>
+</li>
+<li>
+<p>Socket Addressing: Every socket has a unique address that identifies it on the network. This address consists of two components:</p>
+<ul>
+<li>IP address: The IP address identifies the network node where the socket resides. It's a 32-bit or 128-bit number for IPv4 and IPv6, respectively.</li>
+<li>Port number: The port number identifies a specific service or application associated with the socket. Port numbers are 16-bit integers ranging from 0 to 65535. Well-known services, such as web servers and email servers, have standardized port numbers assigned to them.</li>
+</ul>
+</li>
+<li>
+<p>Socket Operations: Sockets provide various operations for managing communication, including:</p>
+<ul>
+<li>Creating a socket: The <code>`socket()</code> system call creates a socket and assigns it a unique descriptor.</li>
+<li>Binding a socket: The <code>bind()</code> system call associates a socket with a specific IP address and port number.</li>
+<li>Connecting a socket: The <code>connect()</code> system call establishes a connection with a remote socket identified by its IP address and port number.</li>
+<li>Sending data: The <code>send()</code> system call sends data from the local socket to the connected remote socket.</li>
+<li>Receiving data: The <code>recv()</code> system call receives data from the connected remote socket into the local socket buffer</li>
+<li>Closing a socket: The <code>close()</code> system call terminates the connection and releases the socket resources.</li>
+</ul>
+</li>
+</ul></div>
+        
+        
+    </div>
+
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+                <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/languages/yaml.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../.."</script>
+    
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
