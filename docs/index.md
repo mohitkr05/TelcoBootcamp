@@ -29,4 +29,7 @@ Notes - Updated for Cohort 1 - (Nov-2023 to Feb-2024)
 ## Excercises    
 
 1. [Preparation](excercises/preparation.md)
-<!-- 2. [D2 - Excercise -  Git](E1-git-commands.md) -->
+2. [Linux and Shell scripting](excercises/linux-shellscripting.md)
+3. [Git Hands on Excercises](excercises/git-handson.md)
+4. [Virtual Machine HandsOn](excercises/vm-handson.md)
+5. [Cloud Computing and Telco Cloud](excercises/Cloud-TelcoCloud.md)
