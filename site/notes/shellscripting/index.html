@@ -165,12 +165,347 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="first-level active"><a href="#shell-scripting">Shell Scripting</a></li>
+        <li class="first-level active"><a href="#shell-scripting-101">Shell Scripting 101</a></li>
+            <li class="second-level"><a href="#what-is-shell-scripting">What is shell scripting?</a></li>
+                
+            <li class="second-level"><a href="#writing-your-first-shell-script">Writing your first shell script</a></li>
+                
+            <li class="second-level"><a href="#using-variables">Using variables</a></li>
+                
+                <li class="third-level"><a href="#examples">Examples</a></li>
+            <li class="second-level"><a href="#conditional-statements">Conditional Statements</a></li>
+                
+                <li class="third-level"><a href="#examples_1">Examples</a></li>
+            <li class="second-level"><a href="#file-reading">File Reading</a></li>
+                
+                <li class="third-level"><a href="#example">Example</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<h1 id="shell-scripting">Shell Scripting</h1></div>
+<h1 id="shell-scripting-101">Shell Scripting 101</h1>
+<h2 id="what-is-shell-scripting">What is shell scripting?</h2>
+<p>What would happen if we write all the linux commands in a file and execute it? Well, shell scripting is the art of automating tasks through the command line. It uses a series of commands in a script file. </p>
+<h2 id="writing-your-first-shell-script">Writing your first shell script</h2>
+<ol>
+<li>Create your first script:</li>
+</ol>
+<p>Open your text editor and create a new file. Save it with a descriptive name ending in .sh, like hello_world.sh. Remember, the .sh extension tells the system it's a shell script.</p>
+<ol>
+<li>Hello, world!:</li>
+</ol>
+<p>Inside your script, type the following line:</p>
+<pre><code class="language-bash">echo &quot;Hello, world!&quot;
+</code></pre>
+<p>This line uses the echo command to print the text "Hello, world!" to the terminal.</p>
+<ol>
+<li>Run your script:</li>
+</ol>
+<p>Save your script and open a terminal. Navigate to the directory where you saved the script.</p>
+<p>To run the script, type the following:</p>
+<pre><code class="language-bash">chmod u+x hello_world.sh
+bash hello_world.sh 
+sh hello_world.sh 
+./hello_world.sh
+</code></pre>
+<p>If everything went well, you should see "Hello, world!" printed in the terminal! Congratulations, you've written and run your first shell script!</p>
+<h2 id="using-variables">Using variables</h2>
+<ul>
+<li>Creating a Variable:</li>
+</ul>
+<p>Think of a variable as a named box holding any value you want: text, numbers, dates, even other variables! To create one, simply assign a value using the = operator:</p>
+<pre><code class="language-bash">name=&quot;Bob&quot;
+age=3 
+today=$(date +%Y-%m-%d) # Store today's date
+</code></pre>
+<p>Note: 
+- Variable names are case-sensitive! Name and name are different boxes.
+- No Spaces: Ensure there are no spaces around the = sign.</p>
+<ol>
+<li>Accessing Stored Values:</li>
+</ol>
+<p>To use the stored value, add a $ symbol before the variable name:</p>
+<pre><code class="language-bash">echo &quot;Hello, $name!&quot;
+echo &quot;I was born in $today.&quot;
+</code></pre>
+<ol>
+<li>Unsetting Variables:</li>
+</ol>
+<p>Like cleaning up your room, you can remove variables with the unset command:</p>
+<pre><code class="language-bash">unset name
+echo &quot;$name&quot; # Should print nothing
+</code></pre>
+<ol>
+<li>Special variables</li>
+</ol>
+<p>pecial Variables</p>
+<p>Shell scripts have several special variables, like:</p>
+<pre><code class="language-bash">    $0 - The name of the script.
+    $1 to $9 - The first to ninth argument passed to the script.
+    $# - The number of arguments passed to the script.
+    $? - The exit status of the last command executed.
+    $$ - The process ID of the current script.
+    $USER - The username of the user running the script.
+</code></pre>
+<h3 id="examples">Examples</h3>
+<ul>
+<li>Dates</li>
+</ul>
+<pre><code class="language-bash">current_date=$(date)
+echo $current_date
+
+</code></pre>
+<ul>
+<li>Arithmetic</li>
+</ul>
+<pre><code class="language-bash">a=5
+b=3
+sum=$((a + b))
+echo $sum  # Outputs: 8
+
+</code></pre>
+<ul>
+<li>String </li>
+</ul>
+<pre><code class="language-bash">greeting=&quot;Hello, &quot;
+name=&quot;Bob&quot;
+message=$greeting$name
+echo $message  # Outputs: Hello, Bob
+</code></pre>
+<ul>
+<li>Text printing</li>
+</ul>
+<pre><code class="language-bash">#!/bin/bash
+
+# Declare a variable
+greeting=&quot;Hello, Shell Scripting!&quot;
+
+# Use the variable
+echo $greeting
+</code></pre>
+<ul>
+<li>User Input </li>
+</ul>
+<pre><code class="language-bash">#!/bin/bash
+
+# Ask for user input
+echo &quot;What is your name?&quot;
+read name
+
+# Greet the user
+echo &quot;Welcome, $name!&quot;
+
+</code></pre>
+<ul>
+<li>Command line substitution</li>
+</ul>
+<pre><code class="language-bash">#!/bin/bash
+
+# Get the current directory
+current_directory=$(pwd)
+
+# Display the current directory
+echo &quot;You are in the directory: $current_directory&quot;
+
+</code></pre>
+<ul>
+<li>Arithmetic Operations</li>
+</ul>
+<pre><code class="language-bash">#!/bin/bash
+
+# Declare variables
+a=10
+b=5
+
+# Arithmetic operations
+sum=$((a + b))
+difference=$((a - b))
+product=$((a * b))
+quotient=$((a / b))
+
+# Display the results
+echo &quot;Sum: $sum&quot;
+echo &quot;Difference: $difference&quot;
+echo &quot;Product: $product&quot;
+echo &quot;Quotient: $quotient&quot;
+
+</code></pre>
+<h2 id="conditional-statements">Conditional Statements</h2>
+<ol>
+<li>if Statement: It evaluates a condition and, if true, executes a block of code. Here's the basic structure:</li>
+</ol>
+<pre><code class="language-bash">if condition; then
+  # Code to execute if true
+fi
+</code></pre>
+<p>For example, checking if a file exists:</p>
+<pre><code class="language-bash">if [ -f &quot;myfile.txt&quot; ]; then
+  echo &quot;myfile.txt is here!&quot;
+fi
+</code></pre>
+<ol>
+<li>Exploring Comparisons: The condition can be any comparison using operators like ==, !=, &lt;, &gt;, &lt;=, and &gt;=. Let's compare user input to a threshold:</li>
+</ol>
+<pre><code class="language-bash">read -p &quot;Enter your age: &quot; age
+if [[ $age -ge 18 ]]; then
+  echo &quot;Welcome! You're eligible to enter.&quot;
+else
+  echo &quot;Sorry, you must be 18 or older.&quot;
+fi
+</code></pre>
+<ol>
+<li>Else and Elif: Add options with else for the opposite condition and elif for additional checks:</li>
+</ol>
+<pre><code class="language-bash">read -p &quot;Enter 1 or 2: &quot; number
+if [[ $number -eq 1 ]]; then
+  echo &quot;Heads!&quot;
+elif [[ $number -eq 2 ]]; then
+  echo &quot;Tails!&quot;
+else
+  echo &quot;It's a draw!&quot;
+fi
+</code></pre>
+<p>Use code with caution. Learn more</p>
+<h3 id="examples_1">Examples</h3>
+<ul>
+<li>Basic If-Else Statement</li>
+</ul>
+<pre><code class="language-bash">#!/bin/bash
+# Read a number
+echo &quot;Enter a number:&quot;
+read number
+
+# Check if the number is positive or negative
+if [ $number -gt 0 ]; then
+    echo &quot;The number is positive.&quot;
+elif [ $number -lt 0 ]; then
+    echo &quot;The number is negative.&quot;
+else
+    echo &quot;The number is zero.&quot;
+fi
+</code></pre>
+<ul>
+<li>Read if file exists</li>
+</ul>
+<pre><code class="language-bash">#!/bin/bash
+
+# File name
+file=&quot;sample.txt&quot;
+
+# Check if the file exists
+if [ -f &quot;$file&quot; ]; then
+    echo &quot;$file exists.&quot;
+else
+    echo &quot;$file does not exist.&quot;
+fi
+
+</code></pre>
+<ul>
+<li>Compare strings</li>
+</ul>
+<pre><code class="language-bash">#!/bin/bash
+
+# String variables
+str1=&quot;Hello&quot;
+str2=&quot;World&quot;
+
+# Compare strings
+if [ &quot;$str1&quot; == &quot;$str2&quot; ]; then
+    echo &quot;Strings are equal.&quot;
+else
+    echo &quot;Strings are not equal.&quot;
+fi
+
+</code></pre>
+<ul>
+<li>Using AND (&amp;&amp;) and OR (||) in conditions</li>
+</ul>
+<pre><code class="language-bash">#!/bin/bash
+# Variables
+a=20
+
+# Check conditions
+if [ $a -gt 5 ] &amp;&amp; [ $a -lt 15 ]; then
+    echo &quot;Number is between 5 and 15.&quot;
+elif [ $a -lt 5 ] || [ $a -gt 15 ]; then
+    echo &quot;Number can be less than 5 or more than 15.&quot;
+else
+    echo &quot;Neither condition is true.&quot;
+fi
+</code></pre>
+<ul>
+<li>Case statement</li>
+</ul>
+<pre><code class="language-bash">#!/bin/bash
+
+# Ask for user input
+echo &quot;Enter your choice (yes/no):&quot;
+read choice
+
+# Case statement
+case $choice in
+    yes|YES|y|Y)
+        echo &quot;You chose yes.&quot;
+        ;;
+    no|NO|n|N)
+        echo &quot;You chose no.&quot;
+        ;;
+    *)
+        echo &quot;Invalid choice.&quot;
+        ;;
+esac
+</code></pre>
+<h2 id="file-reading">File Reading</h2>
+<ol>
+<li>Basic file reading</li>
+</ol>
+<p>This method uses a while loop to iterate through each line of the file.
+Use the read command to capture each line within the loop.</p>
+<pre><code class="language-bash">while IFS= read -r line; do
+  # Process each line (e.g., echo, store in variable)
+done &lt; &quot;filename.txt&quot;
+</code></pre>
+<ol>
+<li>Read specific lines</li>
+</ol>
+<pre><code class="language-bash">head -n 3 &quot;filename.txt&quot;   # Read first 3 lines
+tail -n 2 &quot;filename.txt&quot;   # Read last 2 lines
+grep &quot;error&quot; &quot;filename.txt&quot; # Read lines containing &quot;error&quot;
+
+</code></pre>
+<ol>
+<li>Read whole file into a variable</li>
+</ol>
+<pre><code class="language-bash">file_content=$(cat &quot;filename.txt&quot;)
+# Process the entire content stored in the variable
+</code></pre>
+<h3 id="example">Example</h3>
+<pre><code class="language-bash">#!/bin/bash
+
+# Ask the user for the directory path
+echo &quot;Enter the directory path containing text files:&quot;
+read directory
+
+# Check if the directory exists
+if [ ! -d &quot;$directory&quot; ]; then
+    echo &quot;Directory does not exist.&quot;
+    exit 1
+fi
+
+# Ask for the search keyword
+echo &quot;Enter the search keyword:&quot;
+read keyword
+
+# Loop through each text file in the directory
+echo &quot;Searching for '$keyword' in files in $directory:&quot;
+for file in &quot;$directory&quot;/*.txt
+do
+    echo &quot;Searching in $file:&quot;
+    grep &quot;$keyword&quot; &quot;$file&quot;
+done
+</code></pre>
+<p>References 
+1. https://www.shellscript.sh/</p></div>
         
         
     </div>

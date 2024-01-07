@@ -111,3 +111,32 @@ File permissions and ownership are crucial aspects of Linux file system security
 - `su`- Switch user - e.g. `su username`
 
 
+
+## Project
+
+### Basic Linux system administrator
+
+The objective of this excercise is to understand how system administrators work in Linux
+
+1. Change the hostname of the system `nms01`.
+2. Validate the system configuration using command line commands.
+    - Hostname
+    - Type of shell
+    - Home directory
+    - List of users defined
+    - List of groups defined
+    - List of users in each group
+    - Disk space
+    - Memory usage
+    - Hardware attached
+    - Type of distribution and version
+    - Linux kernel version
+    - IP address
+    - Reachability to internet
+    - Timezone
+
+3. Check the root directory and print out the nested directory structure
+4. What is the type of package manager used?
+5. Update the system to latest version.
+
+

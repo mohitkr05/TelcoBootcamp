@@ -8,10 +8,10 @@
     <meta name="description" content="Publicly shareable notes for Telecom Bootcamp">
     <meta name="author" content="Mohit Kumar">
     
-    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="shortcut icon" href="../../img/favicon.ico">
 
     
-    <title>Home - Telecom Bootcamp</title>
+    <title>Virtualization - Telecom Bootcamp</title>
     
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
@@ -19,9 +19,9 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
     <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
-    <link href="css/bootstrap-custom.min.css" rel="stylesheet">
-    <link href="css/base.min.css" rel="stylesheet">
-    <link href="css/cinder.min.css" rel="stylesheet">
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
 
     
         
@@ -40,7 +40,7 @@
      
 </head>
 
-<body class="homepage" >
+<body>
 
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -59,7 +59,7 @@
             <!-- Main title -->
 
             
-              <a class="navbar-brand" href=".">Telecom Bootcamp</a>
+              <a class="navbar-brand" href="../..">Telecom Bootcamp</a>
             
         </div>
 
@@ -69,8 +69,8 @@
                 <ul class="nav navbar-nav">
                 
                 
-                    <li class="active">
-                        <a href=".">Home</a>
+                    <li >
+                        <a href="../..">Home</a>
                     </li>
                 
                 
@@ -81,31 +81,31 @@
                         
                             
 <li >
-    <a href="notes/introduction-telecom/">Introduction to Telecom Bootcamp</a>
+    <a href="../introduction-telecom/">Introduction to Telecom Bootcamp</a>
 </li>
 
                         
                             
 <li >
-    <a href="notes/Cloud-TelcoCloud/">Cloud Computing & Telco Cloud</a>
+    <a href="../Cloud-TelcoCloud/">Cloud Computing & Telco Cloud</a>
 </li>
 
                         
                             
 <li >
-    <a href="notes/git/">Git & GitOps</a>
+    <a href="../git/">Git & GitOps</a>
 </li>
 
                         
                             
 <li >
-    <a href="notes/linux/">Linux</a>
+    <a href="../linux/">Linux</a>
 </li>
 
                         
                             
 <li >
-    <a href="notes/shellscripting/">Linux Shell scripting</a>
+    <a href="../shellscripting/">Linux Shell scripting</a>
 </li>
 
                         
@@ -120,13 +120,13 @@
                         
                             
 <li >
-    <a href="excercises/preparation/">01 - System Preparation</a>
+    <a href="../../excercises/preparation/">01 - System Preparation</a>
 </li>
 
                         
                             
 <li >
-    <a href="excercises/git-handson/">02 - Git Hands-on</a>
+    <a href="../../excercises/git-handson/">02 - Git Hands-on</a>
 </li>
 
                         
@@ -142,18 +142,8 @@
                             <i class="fas fa-search"></i> Search
                         </a>
                     </li>
-                    <li class="disabled">
-                        <a rel="prev" >
-                            <i class="fas fa-arrow-left"></i> Previous
-                        </a>
-                    </li>
-                    <li >
-                        <a rel="next" href="notes/introduction-telecom/">
-                            Next <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </li>
                     <li>
-                        <a href="https://github.com/mohitkr05/TelcoBootcamp/edit/master/docs/index.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                        <a href="https://github.com/mohitkr05/TelcoBootcamp/edit/master/docs/notes/virtualization.md"><i class="fab fa-github"></i> Edit on GitHub</a>
                     </li>
             </ul>
         </div>
@@ -165,57 +155,99 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="first-level active"><a href="#telecom-boot-camp">Telecom Boot Camp</a></li>
-            <li class="second-level"><a href="#topics-to-be-covered-in-this-boot-camp">Topics to be covered in this Boot Camp</a></li>
+        <li class="first-level active"><a href="#virtualization">Virtualization</a></li>
+            <li class="second-level"><a href="#understanding-virtualization">Understanding Virtualization</a></li>
                 
-            <li class="second-level"><a href="#notes">Notes</a></li>
+                <li class="third-level"><a href="#definition">Definition</a></li>
+                <li class="third-level"><a href="#virtualization_1">Virtualization</a></li>
+                <li class="third-level"><a href="#types-of-virtualization">Types of Virtualization</a></li>
+            <li class="second-level"><a href="#benefits">Benefits</a></li>
                 
-            <li class="second-level"><a href="#excercises">Excercises</a></li>
+            <li class="second-level"><a href="#hypervisor">Hypervisor</a></li>
+                
+                <li class="third-level"><a href="#virtual-machine-vm">Virtual Machine (VM)</a></li>
+            <li class="second-level"><a href="#virtual-machine-terminology">Virtual Machine Terminology</a></li>
+                
+                <li class="third-level"><a href="#snapshot">Snapshot</a></li>
+                <li class="third-level"><a href="#containerization">Containerization</a></li>
+                <li class="third-level"><a href="#cloud-computing-and-virtualization">Cloud Computing and Virtualization</a></li>
+                <li class="third-level"><a href="#challenges">Challenges</a></li>
+            <li class="second-level"><a href="#nfv-and-nfvi">NFV and NFVi</a></li>
+                
+            <li class="second-level"><a href="#dpdk">DPDK</a></li>
                 
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<h1 id="telecom-boot-camp">Telecom Boot Camp</h1>
-<p>Notes - Updated for Cohort 1 - (Nov-2023 to Feb-2024)</p>
-<h2 id="topics-to-be-covered-in-this-boot-camp">Topics to be covered in this Boot Camp</h2>
+<h1 id="virtualization">Virtualization</h1>
+<p><strong><em>Virtualization is the creation of substitutes for real resources.</em></strong></p>
+<h2 id="understanding-virtualization">Understanding Virtualization</h2>
+<h3 id="definition">Definition</h3>
+<p>A system or approach for partitioning the resources of computer hardware into multiple execution environments, which is achieved through the application of various concepts or technologies. This includes but is not limited to hardware and software partitioning, time-sharing, partial or complete machine simulation, emulation, quality of service, and numerous other methodologies.</p>
+<h3 id="virtualization_1">Virtualization</h3>
+<p>Virtualization is a technology that enables the creation and management of virtual instances of computing resources, such as servers, storage, and networks. It allows multiple operating systems (OS) and applications to run on a single physical machine, known as the host, thereby optimizing resource utilization, improving efficiency, and providing flexibility in managing IT infrastructure. Here are some key notes on virtualization:</p>
+<h3 id="types-of-virtualization">Types of Virtualization</h3>
 <ul>
-<li>Introduction to Telecom and Cloud Concepts</li>
-<li>Linux Fundamentals</li>
-<li>Virtualization in Telecom</li>
-<li>Introduction to Containers</li>
-<li>Telecom Cloud Services</li>
+<li>Server Virtualization: Involves dividing a physical server into multiple virtual servers, each running its own OS.</li>
+<li>Desktop Virtualization: Enables running multiple desktop instances on a single physical machine or in a centralized server.</li>
+<li>Network Virtualization: Abstracts network resources, allowing the creation of virtual networks that operate independently of the underlying physical network.</li>
 </ul>
-<h2 id="notes">Notes</h2>
-<ol>
-<li>Introduction to Telecom and Cloud Concepts<ol>
-<li><a href="notes/introduction-telecom/">Introduction to Communications and Telecommunication</a></li>
-<li><a href="notes/Cloud-TelcoCloud/">Cloud Computing and Telco Cloud</a></li>
-<li><a href="notes/git/">Git Basics</a></li>
-<li><a href="notes/linux/">Linux Fundamentals</a></li>
-<li><a href="notes/linux-networking/">Linux Networking</a></li>
-<li><a href="notes/shellscripting/">Shell Scripting</a></li>
-<li><a href="notes/virtualization/">Virtualization in Telecom</a></li>
-<li><a href="notes/containers/">Containers</a></li>
-<li><a href="notes/cloud-services/">Cloud Services</a> </li>
-</ol>
+<h2 id="benefits">Benefits</h2>
+<ul>
+<li><em>Consolidation &amp; Resource Optimization</em>:</li>
+<li>Efficiently utilize hardware resources by running multiple virtual instances on a single physical server.</li>
+<li>Increase server utilization</li>
+<li>Simplify legacy software migration</li>
+<li>Host mixed operating systems per physical platform</li>
+<li>
+<p>Streamline test and development environments</p>
 </li>
-</ol>
-<h2 id="excercises">Excercises</h2>
-<ol>
-<li><a href="excercises/preparation/">Preparation</a></li>
-<li><a href="excercises/linux-shellscripting/">Linux and Shell scripting</a></li>
-<li><a href="excercises/git-handson/">Git Hands on Excercises</a></li>
-<li><a href="excercises/vm-handson/">Virtual Machine HandsOn</a></li>
-<li><a href="excercises/Cloud-TelcoCloud/">Cloud Computing and Telco Cloud</a></li>
-</ol></div>
+<li>
+<p><em>Isolation</em>: </p>
+</li>
+<li>Isolate applications and operating systems, preventing issues in one virtual machine from affecting others.</li>
+<li>Isolate software faults</li>
+<li>Reallocate existing partitions</li>
+<li>
+<p>Create dedicated or as-needed failover partitions</p>
+</li>
+<li>
+<p><em>Cost Savings</em>: Reduce hardware and maintenance costs by consolidating multiple servers onto a single physical machine.</p>
+</li>
+<li>
+<p><em>Flexibility</em>: Easily scale up or down, allocate resources dynamically, and migrate virtual machines between hosts.</p>
+</li>
+</ul>
+<h2 id="hypervisor">Hypervisor</h2>
+<p>Also known as a Virtual Machine Monitor (VMM), it is a software or firmware that creates and runs virtual machines on the host system.</p>
+<p>Two types: Type 1 (bare-metal) runs directly on the hardware, while Type 2 (hosted) runs on top of an existing operating system.</p>
+<h3 id="virtual-machine-vm">Virtual Machine (VM)</h3>
+<p>A software-based emulation of a physical computer, running an operating system and applications independently of the host system.
+VMs share the underlying physical resources but operate in isolated environments.</p>
+<h2 id="virtual-machine-terminology">Virtual Machine Terminology</h2>
+<h3 id="snapshot">Snapshot</h3>
+<p>A point-in-time image of a virtual machine's state, allowing for easy backup, recovery, and rollback to a specific configuration.</p>
+<h3 id="containerization">Containerization</h3>
+<p>A lightweight form of virtualization that encapsulates applications and their dependencies, allowing them to run consistently across different environments.</p>
+<h3 id="cloud-computing-and-virtualization">Cloud Computing and Virtualization</h3>
+<p>Virtualization is a fundamental technology in cloud computing, enabling the efficient allocation of resources and rapid deployment of services.</p>
+<h3 id="challenges">Challenges</h3>
+<ul>
+<li>Resource Overhead: Virtualization introduces some overhead due to the need for the hypervisor to manage virtual instances.</li>
+<li>Security Concerns: Isolating virtual machines is critical to prevent security breaches and unauthorized access.</li>
+<li>Complexity: Managing a virtualized environment can be complex, requiring skills in both virtualization technologies and underlying systems.</li>
+</ul>
+<h2 id="nfv-and-nfvi">NFV and NFVi</h2>
+<h2 id="dpdk">DPDK</h2>
+<p><a href="../DPDK/">DPDK</a></p></div>
         
         
     </div>
 
     
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/bootstrap-3.0.3.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
 
     
     <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
@@ -225,10 +257,10 @@
     <script>hljs.initHighlightingOnLoad();</script>
     
 
-    <script>var base_url = "."</script>
+    <script>var base_url = "../.."</script>
     
-    <script src="js/base.js"></script>
-    <script src="search/main.js"></script>
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
 
     <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -299,8 +331,3 @@
     </body>
 
 </html>
-
-<!--
-MkDocs version : 1.5.3
-Build Date UTC : 2024-01-07 02:11:29.249534+00:00
--->
