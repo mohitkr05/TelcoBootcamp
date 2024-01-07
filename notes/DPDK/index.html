@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Publicly shareable notes for Telecom Bootcamp">
+    <meta name="author" content="Mohit Kumar">
+    
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    
+    <title>DPDK & SR-IOV - Telecom Bootcamp</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/dracula.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../..">Telecom Bootcamp</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Notes <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../introduction-telecom/">Introduction to Telecom Bootcamp</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Cloud-TelcoCloud/">Cloud Computing & Telco Cloud</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../git/">Git & GitOps</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../linux/">Linux</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../shellscripting/">Linux Shell scripting</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Excercises <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../excercises/preparation/">01 - System Preparation</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../excercises/git-handson/">02 - Git Hands-on</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/mohitkr05/TelcoBootcamp/edit/master/docs/notes/DPDK.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#dpdk-sr-iov">DPDK &amp; SR-IOV</a></li>
+            <li class="second-level"><a href="#what-is-dpdk">What is DPDK?</a></li>
+                
+            <li class="second-level"><a href="#what-is-sr-iov">What is SR-IOV?</a></li>
+                
+            <li class="second-level"><a href="#packet-processing">Packet processing</a></li>
+                
+                <li class="third-level"><a href="#traditional-kernel-based-stack">Traditional Kernel-Based Stack</a></li>
+                <li class="third-level"><a href="#differences-between-packet-processing-techniques">Differences between Packet processing techniques</a></li>
+            <li class="second-level"><a href="#dpdk">DPDK</a></li>
+                
+                <li class="third-level"><a href="#components-of-dpdk">Components of DPDK</a></li>
+                <li class="third-level"><a href="#types-of-packet-processing">Types of Packet processing</a></li>
+                <li class="third-level"><a href="#differences">Differences</a></li>
+            <li class="second-level"><a href="#sr-iov-dpdk">SR-IOV &amp; DPDK</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="dpdk-sr-iov">DPDK &amp; SR-IOV</h1>
+<h2 id="what-is-dpdk">What is DPDK?</h2>
+<p>Data Plane Development Kit (DPDK) is a set of libraries and drivers that facilitate the development of high-performance packet processing applications. </p>
+<p>DPDK (Data Plane Development Kit) was developed by Intel to accelerate packet processing and was released to the public in the year 2010. It accelerates network I/O by
+allowing data packets to transition to the user space directly without having to go through kernel space, thus avoiding overheads such as memory copying and context switching.</p>
+<h2 id="what-is-sr-iov">What is SR-IOV?</h2>
+<p>SR-IOV, an acronym for Single Root I/O Virtualization, serves the purpose of partitioning a singular physical function, such as a <em>Network Interface Card (NIC)</em>, into <em>multiple virtual functions</em>. </p>
+<p><img alt="sr-iov" src="../../assets/image-8.png" /></p>
+<ul>
+<li>These virtual functions act as independent network interfaces accessible through application</li>
+<li>The concept behind SR-IOV involves creating virtual functions that mimic direct access to the NIC, offering accelerated Input/Output (IO) by bypassing both the Virtual Machine Manager and the Virtual Switch</li>
+<li>SR-IOV exhibits speed advantages by circumventing certain NIC functions. </li>
+<li>It demonstrates efficient scalability without excessive resource consumption, making it a preferred choice for high-performance virtual computing environments. </li>
+</ul>
+<h2 id="packet-processing">Packet processing</h2>
+<ul>
+<li>Packet processing in Linux involves the handling and manipulation of network packets as they traverse the networking stack.</li>
+<li>The Linux kernel is responsible for managing the reception, transmission, and routing of packets.</li>
+<li>The Linux networking stack is a layered architecture that handles various networking tasks.</li>
+</ul>
+<p><img alt="Alt text" src="../../assets/image-1.png" /></p>
+<p><img alt="Alt text" src="../../assets/image.png" />
+- Key layers include the Data Link Layer, Network Layer, Transport Layer, and Application Layer.</p>
+<h3 id="traditional-kernel-based-stack">Traditional Kernel-Based Stack</h3>
+<p>Packets traverse a multi-layered stack within the kernel, 
+involving tasks like buffering, demultiplexing, protocol processing, and socket-based delivery to applications.
+There are two primary methods for Network Interface Card (NIC) communication with the kernel: interrupts and polling. Both techniques can be employed independently, or a combination of both may be utilized.</p>
+<p><img alt="Alt text" src="../../assets/image-4.png" /></p>
+<p><em>Interrupt-Driven I/O</em>
+- Currently, interrupt-driven I/O is the more prevalent technique.
+- Commonly used for its efficiency in handling I/O operations, particularly in standard scenarios.</p>
+<p><em>Polling for High-Throughput I/O</em></p>
+<ul>
+<li>Polling is more frequently applied in situations demanding high-throughput I/O.</li>
+<li>Device drivers may be configured to switch to polling when the I/O rate is high, reverting to interrupts when the I/O rate decreases.</li>
+</ul>
+<p><em>Flexible Configuration</em></p>
+<ul>
+<li>The choice between interrupts and polling, or a combination, provides flexibility based on specific I/O requirements.</li>
+<li>Allows optimization for varying scenarios, adjusting to the characteristics of the workload or I/O rate.</li>
+</ul>
+<h4 id="sk_buff">SK_BUFF</h4>
+<p>SK_BUFF (Socket Buffer) is a fundamental data structure in the Linux kernel that represents network packets. It plays a crucial role in packet processing, buffering, and transmission across various network layers.</p>
+<p><img alt="Alt text" src="../../assets/image-2.png" /></p>
+<p><em>Key characteristics</em>
+ - Packet Metadata and Data:
+    - Stores packet data itself, along with essential metadata:
+     - Length
+     - Checksum status
+     - Protocol type
+     - Timestamps
+     - Network device information
+     - Routing information
+     - Quality of Service (QoS) tags
+     - More
+- Doubly Linked List Organization:
+     - SK_BUFFs form doubly linked lists, enabling efficient movement between queues and processing modules within the kernel.
+- Buffer Management:
+    - Manages packet data buffers flexibly, using techniques like:
+    - Linear buffers for small packets
+    - Fragmented buffers for large packets
+    - Zero-copy mechanisms to minimize data movement
+- Function Pointers:
+    - Includes function pointers for custom packet processing actions, allowing for protocol-specific handling and flexibility.</p>
+<p><img alt="Alt text" src="../../assets/image-3.png" />
+- Key uses within the kernel:
+  - Network Device Drivers receive and transmit packets using SK_BUFFs.
+  - Network Stack Layers Process and forward packets through layers like IP, TCP, and UDP.
+  - Routing - Determine packet paths and forward them accordingly.
+  - Traffic Control - Implement QoS features and traffic shaping.
+  - Firewalls and Security Modules - Inspect and filter packets for security purposes.</p>
+<h3 id="differences-between-packet-processing-techniques">Differences between Packet processing techniques</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Traditional Kernel-Based Processing</th>
+<th>Kernel Bypass Processing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Execution Location</strong></td>
+<td>In the kernel space, involving the operating system's networking stack</td>
+<td>In user space, bypassing the kernel for direct hardware access</td>
+</tr>
+<tr>
+<td><strong>Packet Reception</strong></td>
+<td>Interrupt-driven, involving kernel handling and context switches</td>
+<td>Polling or event-driven, reducing reliance on interrupts</td>
+</tr>
+<tr>
+<td><strong>Packet Transmission</strong></td>
+<td>Relying on kernel for transmission, involving context switches</td>
+<td>Direct user-space control over NICs, minimal kernel involvement</td>
+</tr>
+<tr>
+<td><strong>Memory Access</strong></td>
+<td>Utilizes kernel-managed memory, may involve additional overhead</td>
+<td>Manages its own memory pools in user space for optimized access</td>
+</tr>
+<tr>
+<td><strong>Latency</strong></td>
+<td>Generally higher latency due to kernel involvement</td>
+<td>Lower latency, especially in scenarios requiring rapid packet processing</td>
+</tr>
+<tr>
+<td><strong>Scalability</strong></td>
+<td>Limited scalability, particularly in high-throughput scenarios</td>
+<td>Improved scalability, leveraging user space and parallel processing</td>
+</tr>
+<tr>
+<td><strong>Context Switching</strong></td>
+<td>Frequent context switches between user and kernel space</td>
+<td>Reduced context switching, enhancing efficiency and performance</td>
+</tr>
+<tr>
+<td><strong>Ease of Customization</strong></td>
+<td>Limited customization due to reliance on kernel networking stack</td>
+<td>More flexibility for customization and optimization in user space</td>
+</tr>
+<tr>
+<td><strong>Compatibility with Hardware</strong></td>
+<td>Adaptable to various hardware configurations</td>
+<td>May require hardware-specific optimizations for full efficiency</td>
+</tr>
+<tr>
+<td><strong>Use Cases</strong></td>
+<td>General-purpose networking tasks, suitable for standard applications</td>
+<td>High-performance scenarios like high-frequency trading, packet processing applications</td>
+</tr>
+<tr>
+<td><strong>Examples of Technologies</strong></td>
+<td>TCP/IP stack in the kernel space</td>
+<td>Data Plane Development Kit (DPDK), Netmap, DPACC (Direct Packet Access)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="dpdk">DPDK</h2>
+<p>Within DPDK, there are Poll Mode Drivers (PMDs) for 1, 10, and 40 Gigabit, along with other options. </p>
+<p>PMDs serve as software components with APIs, enabling interaction with Network Interface Cards (NICs) and their queues directly from user space. By utilizing PMDs, DPDK applications gain the capability to access RX and TX descriptors without relying on interrupts, eliminating the necessity for the kernel to manage network traffic.</p>
+<p><img alt="Alt text" src="../../assets/image-5.png" /></p>
+<h3 id="components-of-dpdk">Components of DPDK</h3>
+<p><img alt="arch" src="https://doc.dpdk.org/guides/_images/architecture-overview.svg" /></p>
+<ul>
+<li>
+<p>Environment Abstraction Layer (EAL): The EAL provides a uniform and consistent interface for DPDK applications to interact with the underlying hardware and operating system. It abstracts the differences between various environments, allowing DPDK to run seamlessly across different platforms.</p>
+</li>
+<li>
+<p>Memory Pool Manager (rte_mempool): DPDK's MPM is responsible for managing memory pools efficiently. It allows applications to allocate and deallocate memory in a way that minimizes fragmentation and optimizes performance. Memory pools are crucial for DPDK applications to efficiently manage memory for packet buffers.</p>
+</li>
+<li>
+<p>Poll-Mode Drivers (PMDs): PMDs are essential components that enable DPDK applications to communicate directly with Network Interface Cards (NICs) in user space. PMDs provide APIs for interacting with the NICs and their queues without relying on the kernel for processing interrupts. They play a crucial role in achieving high-throughput and low-latency packet processing.</p>
+</li>
+<li>
+<p>Network Packet Buffer Management (rte_mbuf): DPDK includes a buffer management system that efficiently handles the allocation and management of packet buffers. It ensures that the application has fast and direct access to buffers for packet processing, optimizing memory usage and minimizing packet processing overhead.</p>
+</li>
+<li>
+<p>Ring Manager(rte_ring): The Ring Library is a part of DPDK that provides a lockless, multi-producer, multi-consumer ring buffer implementation. It is used for inter-core communication and synchronization in a multi-core environment. Rings are employed for passing packets and metadata between different cores without the need for locks.</p>
+</li>
+<li>
+<p>Packet Framework (Pktmbuf): DPDK's Packet Framework, also known as Pktmbuf, is a packet buffer management library. It provides an abstraction for packet buffers, making it easier for applications to work with and process packets. Pktmbuf includes features for efficient packet manipulation and metadata storage.</p>
+</li>
+</ul>
+<h4 id="other-components-features">Other components &amp; features</h4>
+<ul>
+<li>
+<p>Multi-Core Support: DPDK is designed to take advantage of multi-core architectures. It provides mechanisms for distributing packet processing tasks across multiple cores, allowing for parallelism and scalability. Multi-core support is crucial for achieving high-performance packet processing in modern, multi-core systems.</p>
+</li>
+<li>
+<p>Device-agnostic API: DPDK provides a device-agnostic API that abstracts the differences between various NICs. This allows DPDK applications to be portable across different hardware platforms without requiring significant modifications.</p>
+</li>
+<li>
+<p>Poll-Mode Event Notification Framework: The Poll-Mode Event Notification Framework in DPDK facilitates event-driven packet processing. It allows applications to receive notifications about specific events, such as the arrival of packets or changes in the status of queues, without relying on interrupts. This framework contributes to the efficiency and responsiveness of DPDK applications.</p>
+</li>
+</ul>
+<h3 id="types-of-packet-processing">Types of Packet processing</h3>
+<p>DPDK applications for packet processing can be categorized into two different types: run-to-completion or pipeline model</p>
+<h4 id="run-to-completion-mode">Run-to-Completion mode</h4>
+<p><img alt="Alt text" src="../../assets/image-6.png" /></p>
+<p>In the Run-to-Completion mode, the entire packet processing or network-related tasks are handled by a single thread within the application. This thread is responsible for executing the tasks in a sequential order.
+- Incoming packets are typically placed in a queue. The single-threaded application dequeues tasks from this queue and processes them one at a time.
+- The thread processes each task sequentially, meaning that it completes one task before moving on to the next. This sequential execution ensures determinism in the order of task processing.
+- Since all tasks are processed by a single thread, there is minimal context switching overhead. Context switching refers to the process of saving and restoring the state of a CPU, which can be resource-intensive.</p>
+<h4 id="pipeline-model">Pipeline Model</h4>
+<p>This model involves breaking down a complex operation or set of tasks into smaller, independent stages, each handled by a dedicated processing unit or thread.<br />
+- The overall operation or task is divided into several stages, each representing a distinct step in the processing pipeline. These stages can include tasks like packet parsing, filtering, transformation, and transmission.
+- Different stages of the pipeline operate concurrently, allowing for parallel processing of multiple tasks. This parallelism improves throughput and reduces the overall processing time.
+- After completing a stage, a processing unit hands over the partially processed data or task to the next stage in the pipeline. This handover is often achieved through shared data structures or buffers.
+- By utilizing parallelism, the pipeline model ensures more efficient use of available resources, including CPU cores. It maximizes the throughput by allowing multiple tasks to progress through the pipeline simultaneously.
+- Communication between stages is often required for tasks like passing intermediate results or coordinating decisions. Shared data structures or inter-thread communication mechanisms facilitate this coordination.</p>
+<p><img alt="Alt text" src="../../assets/image-7.png" /></p>
+<h3 id="differences">Differences</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Run-to-Completion Model</th>
+<th>Pipeline Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Execution Model</strong></td>
+<td>Single-threaded, run-to-completion</td>
+<td>Multi-threaded, pipeline processing</td>
+</tr>
+<tr>
+<td><strong>Thread Utilization</strong></td>
+<td>Uses a single thread per core</td>
+<td>Uses multiple threads per core, each dedicated to a specific stage in the pipeline</td>
+</tr>
+<tr>
+<td><strong>Task Execution Order</strong></td>
+<td>Sequential execution of tasks</td>
+<td>Parallel execution of tasks in stages</td>
+</tr>
+<tr>
+<td><strong>Concurrency</strong></td>
+<td>Limited concurrency</td>
+<td>Higher concurrency, better parallelism</td>
+</tr>
+<tr>
+<td><strong>Scalability</strong></td>
+<td>Limited scalability with increasing core count</td>
+<td>Improved scalability with better utilization of multi-core CPUs</td>
+</tr>
+<tr>
+<td><strong>Synchronization</strong></td>
+<td>Minimal synchronization requirements</td>
+<td>Requires synchronization between stages</td>
+</tr>
+<tr>
+<td><strong>Complexity</strong></td>
+<td>Simplicity in design and debugging</td>
+<td>More complex due to inter-stage communication and synchronization</td>
+</tr>
+<tr>
+<td><strong>Latency</strong></td>
+<td>Lower latency for individual tasks</td>
+<td>Potentially higher latency due to inter-stage communication</td>
+</tr>
+<tr>
+<td><strong>Throughput</strong></td>
+<td>May limit overall system throughput</td>
+<td>Potential for higher throughput, especially in scenarios with parallelizable tasks</td>
+</tr>
+<tr>
+<td><strong>Use Cases</strong></td>
+<td>Simple applications with limited parallelism</td>
+<td>Complex packet processing applications with multiple stages of processing</td>
+</tr>
+<tr>
+<td><strong>Example Application</strong></td>
+<td>Simple packet forwarding</td>
+<td>Deep packet inspection, network functions virtualization (NFV)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sr-iov-dpdk">SR-IOV &amp; DPDK</h2>
+<p>SR-IOV (Single Root I/O Virtualization) and DPDK (Data Plane Development Kit) are often used together in implementing 5G network functions to achieve optimal performance and efficiency. Here are the key reasons for their joint utilization in 5G networks:</p>
+<ul>
+<li>
+<p>High Performance and Throughput: SR-IOV allows the creation of multiple virtual functions for a single physical NIC, enabling direct and efficient communication between the virtual functions and the hardware. This reduces the overhead associated with traditional networking, leading to higher performance. DPDK provides a set of libraries and drivers optimized for fast packet processing in user space. It enables applications to interact directly with NICs using Poll-Mode Drivers (PMDs), thereby achieving high throughput and low latency.</p>
+</li>
+<li>
+<p>Efficient Resource Utilization: SR-IOV enables the creation of virtual NICs with dedicated resources, ensuring efficient utilization of hardware capabilities. Each virtual function has direct access to the NIC, avoiding unnecessary layers in the networking stack. DPDK's user-space packet processing minimizes resource overhead associated with kernel-based processing, allowing for efficient utilization of CPU cores and memory.</p>
+</li>
+<li>
+<p>Scalability: 5G networks demand scalability to handle a massive number of devices and the associated increase in network traffic. SR-IOV's ability to create multiple virtual functions and DPDK's support for multi-core architectures provide scalability to meet the demands of 5G networks.</p>
+</li>
+<li>
+<p>Low Latency: DPDK's direct access to NICs in user space and SR-IOV's reduction of overhead contribute to lower latency in packet processing. This is crucial in 5G networks, especially for applications that require real-time communication, such as ultra-reliable low-latency communication (URLLC).</p>
+</li>
+<li>
+<p>Network Function Virtualization (NFV): NFV is a key aspect of 5G networks, allowing network functions to be virtualized and run on standard hardware. SR-IOV and DPDK play significant roles in NFV by providing efficient ways to handle I/O operations and accelerate packet processing.</p>
+</li>
+<li>
+<p>Customization and Optimization: DPDK allows developers to have fine-grained control over packet processing, enabling customization and optimization based on the specific requirements of 5G network functions. SR-IOV's direct access to physical resources allows for customization of virtual functions, tailoring them to the needs of specific network functions in the 5G environment.</p>
+</li>
+<li>
+<p>Complementary Technologies: SR-IOV and DPDK are complementary technologies; SR-IOV optimizes I/O operations and resource allocation, while DPDK optimizes the data plane for packet processing. Their combined use addresses different aspects of networking, resulting in a comprehensive solution for 5G network functions.</p>
+</li>
+</ul></div>
+        
+        
+    </div>
+
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+                <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/languages/yaml.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../.."</script>
+    
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

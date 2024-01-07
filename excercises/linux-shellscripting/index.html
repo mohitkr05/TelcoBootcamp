@@ -11,7 +11,7 @@
     <link rel="shortcut icon" href="../../img/favicon.ico">
 
     
-    <title>Virtualization - Telecom Bootcamp</title>
+    <title>Linux and Shell scripting - Telecom Bootcamp</title>
     
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
@@ -81,31 +81,31 @@
                         
                             
 <li >
-    <a href="../introduction-telecom/">Introduction to Telecom Bootcamp</a>
+    <a href="../../notes/introduction-telecom/">Introduction to Telecom Bootcamp</a>
 </li>
 
                         
                             
 <li >
-    <a href="../Cloud-TelcoCloud/">Cloud Computing & Telco Cloud</a>
+    <a href="../../notes/Cloud-TelcoCloud/">Cloud Computing & Telco Cloud</a>
 </li>
 
                         
                             
 <li >
-    <a href="../git/">Git & GitOps</a>
+    <a href="../../notes/git/">Git & GitOps</a>
 </li>
 
                         
                             
 <li >
-    <a href="../linux/">Linux</a>
+    <a href="../../notes/linux/">Linux</a>
 </li>
 
                         
                             
 <li >
-    <a href="../shellscripting/">Linux Shell scripting</a>
+    <a href="../../notes/shellscripting/">Linux Shell scripting</a>
 </li>
 
                         
@@ -120,13 +120,13 @@
                         
                             
 <li >
-    <a href="../../excercises/preparation/">01 - System Preparation</a>
+    <a href="../preparation/">01 - System Preparation</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../excercises/git-handson/">02 - Git Hands-on</a>
+    <a href="../git-handson/">02 - Git Hands-on</a>
 </li>
 
                         
@@ -143,7 +143,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="https://github.com/mohitkr05/TelcoBootcamp/edit/master/docs/notes/virtualization.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                        <a href="https://github.com/mohitkr05/TelcoBootcamp/edit/master/docs/excercises/linux-shellscripting.md"><i class="fab fa-github"></i> Edit on GitHub</a>
                     </li>
             </ul>
         </div>
@@ -155,92 +155,92 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="first-level active"><a href="#virtualization">Virtualization</a></li>
-            <li class="second-level"><a href="#understanding-virtualization">Understanding Virtualization</a></li>
+        <li class="first-level active"><a href="#linux-and-shell-scripting">Linux and Shell scripting</a></li>
+            <li class="second-level"><a href="#linux-excercise">Linux excercise</a></li>
                 
-                <li class="third-level"><a href="#definition">Definition</a></li>
-                <li class="third-level"><a href="#virtualization_1">Virtualization</a></li>
-                <li class="third-level"><a href="#types-of-virtualization">Types of Virtualization</a></li>
-            <li class="second-level"><a href="#benefits">Benefits</a></li>
-                
-            <li class="second-level"><a href="#hypervisor">Hypervisor</a></li>
-                
-                <li class="third-level"><a href="#virtual-machine-vm">Virtual Machine (VM)</a></li>
-            <li class="second-level"><a href="#virtual-machine-terminology">Virtual Machine Terminology</a></li>
-                
-                <li class="third-level"><a href="#snapshot">Snapshot</a></li>
-                <li class="third-level"><a href="#containerization">Containerization</a></li>
-                <li class="third-level"><a href="#cloud-computing-and-virtualization">Cloud Computing and Virtualization</a></li>
-                <li class="third-level"><a href="#challenges">Challenges</a></li>
-            <li class="second-level"><a href="#nfv-and-nfvi">NFV and NFVi</a></li>
-                
-            <li class="second-level"><a href="#dpdk">DPDK</a></li>
+                <li class="third-level"><a href="#command-line-excercise">Command Line excercise</a></li>
+                <li class="third-level"><a href="#linux-as-a-multi-user-environment">Linux as a Multi-user Environment</a></li>
+            <li class="second-level"><a href="#shell-scripting-hands-on">Shell scripting hands on</a></li>
                 
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<h1 id="virtualization">Virtualization</h1>
-<p><strong><em>Virtualization is the creation of substitutes for real resources.</em></strong></p>
-<h2 id="understanding-virtualization">Understanding Virtualization</h2>
-<h3 id="definition">Definition</h3>
-<p>A system or approach for partitioning the resources of computer hardware into multiple execution environments, which is achieved through the application of various concepts or technologies. This includes but is not limited to hardware and software partitioning, time-sharing, partial or complete machine simulation, emulation, quality of service, and numerous other methodologies.</p>
-<h3 id="virtualization_1">Virtualization</h3>
-<p>Virtualization is a technology that enables the creation and management of virtual instances of computing resources, such as servers, storage, and networks. It allows multiple operating systems (OS) and applications to run on a single physical machine, known as the host, thereby optimizing resource utilization, improving efficiency, and providing flexibility in managing IT infrastructure. Here are some key notes on virtualization:</p>
-<h3 id="types-of-virtualization">Types of Virtualization</h3>
-<ul>
-<li>Server Virtualization: Involves dividing a physical server into multiple virtual servers, each running its own OS.</li>
-<li>Desktop Virtualization: Enables running multiple desktop instances on a single physical machine or in a centralized server.</li>
-<li>Network Virtualization: Abstracts network resources, allowing the creation of virtual networks that operate independently of the underlying physical network.</li>
+<h1 id="linux-and-shell-scripting">Linux and Shell scripting</h1>
+<h2 id="linux-excercise">Linux excercise</h2>
+<h3 id="command-line-excercise">Command Line excercise</h3>
+<p>The objective of this excercise is to understand how command line works in Linux</p>
+<ol>
+<li>Check which shell you are using.</li>
+<li>Repeat the above command with a short cut key.</li>
+<li>Create a directory <code>hello</code> and create a file <code>hello.txt</code> in it.</li>
+<li>Edit the file <code>hello.txt</code> and write <code>Hello World</code> in it.</li>
+<li>Manipulate the file and perform the folloing<ul>
+<li>Open the file -  <code>cat hello.txt</code></li>
+<li>Count the lines in the file - <code>wc -l hello.txt</code></li>
+<li>Count the first 5 lines in the file - <code>head -n 5 hello.txt</code></li>
+<li>Count the last 5 lines in the file - <code>tail -n 5 hello.txt</code></li>
 </ul>
-<h2 id="benefits">Benefits</h2>
-<ul>
-<li><em>Consolidation &amp; Resource Optimization</em>:</li>
-<li>Efficiently utilize hardware resources by running multiple virtual instances on a single physical server.</li>
-<li>Increase server utilization</li>
-<li>Simplify legacy software migration</li>
-<li>Host mixed operating systems per physical platform</li>
-<li>
-<p>Streamline test and development environments</p>
 </li>
+<li>Use the input and output redirection in two of the commands.</li>
+<li>Use a pipe operator with two commands.</li>
+<li>Print out the root directory structure in a file with a single line command.</li>
+<li>Instal wireshark on the system.</li>
+<li>Remove the package wireshark from the system.</li>
+</ol>
+<h3 id="linux-as-a-multi-user-environment">Linux as a Multi-user Environment</h3>
+<p>The objective of this excercise is to understand how multiuser environment works in Linux</p>
+<ol>
 <li>
-<p><em>Isolation</em>: </p>
-</li>
-<li>Isolate applications and operating systems, preventing issues in one virtual machine from affecting others.</li>
-<li>Isolate software faults</li>
-<li>Reallocate existing partitions</li>
-<li>
-<p>Create dedicated or as-needed failover partitions</p>
-</li>
-<li>
-<p><em>Cost Savings</em>: Reduce hardware and maintenance costs by consolidating multiple servers onto a single physical machine.</p>
-</li>
-<li>
-<p><em>Flexibility</em>: Easily scale up or down, allocate resources dynamically, and migrate virtual machines between hosts.</p>
-</li>
+<p>You are a system administrator. Create the following permission scopes</p>
+<ol>
+<li>Create 3 Groups - <code>sysadmins</code>, <code>netengineers</code> and <code>users</code> </li>
+<li>Create 4 Users - <code>john</code>, <code>paul</code>,<code>ajay</code> , <code>george</code> and <code>ringo</code></li>
+<li>Add users to groups - <ul>
+<li><code>john</code> in <code>sysadmins</code></li>
+<li><code>paul</code> &amp; <code>ajay</code> in <code>netengineers</code> </li>
+<li><code>george</code> &amp; <code>ringo</code> in <code>users</code></li>
 </ul>
-<h2 id="hypervisor">Hypervisor</h2>
-<p>Also known as a Virtual Machine Monitor (VMM), it is a software or firmware that creates and runs virtual machines on the host system.</p>
-<p>Two types: Type 1 (bare-metal) runs directly on the hardware, while Type 2 (hosted) runs on top of an existing operating system.</p>
-<h3 id="virtual-machine-vm">Virtual Machine (VM)</h3>
-<p>A software-based emulation of a physical computer, running an operating system and applications independently of the host system.
-VMs share the underlying physical resources but operate in isolated environments.</p>
-<h2 id="virtual-machine-terminology">Virtual Machine Terminology</h2>
-<h3 id="snapshot">Snapshot</h3>
-<p>A point-in-time image of a virtual machine's state, allowing for easy backup, recovery, and rollback to a specific configuration.</p>
-<h3 id="containerization">Containerization</h3>
-<p>A lightweight form of virtualization that encapsulates applications and their dependencies, allowing them to run consistently across different environments.</p>
-<h3 id="cloud-computing-and-virtualization">Cloud Computing and Virtualization</h3>
-<p>Virtualization is a fundamental technology in cloud computing, enabling the efficient allocation of resources and rapid deployment of services.</p>
-<h3 id="challenges">Challenges</h3>
+</li>
+</ol>
+</li>
+<li>
+<p>Add the user <code>john</code> to sudoers list.</p>
+</li>
+<li>
+<p>Switch user with each of the above user and validate the following</p>
 <ul>
-<li>Resource Overhead: Virtualization introduces some overhead due to the need for the hypervisor to manage virtual instances.</li>
-<li>Security Concerns: Isolating virtual machines is critical to prevent security breaches and unauthorized access.</li>
-<li>Complexity: Managing a virtualized environment can be complex, requiring skills in both virtualization technologies and underlying systems.</li>
+<li>Type of shell </li>
+<li>home directory</li>
 </ul>
-<h2 id="nfv-and-nfvi">NFV and NFVi</h2>
-<h2 id="dpdk">DPDK</h2>
-<p><a href="../DPDK/">DPDK</a></p></div>
+</li>
+<li>
+<p>Create the following directories in <code>/opt/project</code>.  Use only a single line command to do this.</p>
+<ol>
+<li><code>/opt/project/sysadmin</code></li>
+<li><code>/opt/project/netengineers</code></li>
+<li><code>/opt/project/users</code></li>
+</ol>
+</li>
+<li>
+<p>Change the ownership of both directories to the following groups </p>
+<ol>
+<li>owner sysadmin -  /opt/project/sysadmin</li>
+<li>owner netengineers - /opt/project/netengineers</li>
+<li>owner users -  /opt/project/users</li>
+</ol>
+</li>
+<li>
+<p>Validate that both <code>ajay</code> and <code>paul</code> are able to access the documents in the directory <code>/opt/project/netengineers</code> &amp; not able to access any documents in <code>/opt/project/sysadmin</code>.</p>
+</li>
+<li>
+<p>Validate that <code>george</code> and <code>ringo</code> are able to access the documents in the directory <code>/opt/project/users</code> &amp; not able to access any documents in <code>/opt/project/sysadmin</code>.</p>
+</li>
+<li>
+<p>Create a new file in <code>/opt/project/netengineers</code> with the user <code>ajay</code>. Switch to <code>paul</code> - Can you write to this file? How can you do this?</p>
+</li>
+</ol>
+<h2 id="shell-scripting-hands-on">Shell scripting hands on</h2></div>
         
         
     </div>
