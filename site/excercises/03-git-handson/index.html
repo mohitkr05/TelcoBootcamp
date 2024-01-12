@@ -11,7 +11,7 @@
     <link rel="shortcut icon" href="../../img/favicon.ico">
 
     
-    <title>Network function virtualization - Telecom Bootcamp</title>
+    <title>Git Hands on - Telecom Bootcamp</title>
     
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
@@ -70,7 +70,46 @@
                 
                 
                     <li >
-                        <a href="../..">Home</a>
+                        <a href="../..">Telecom Boot Camp</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Excercises <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../01-preparation/">System preparation</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../02-linux-shellscripting/">Linux and Shell scripting</a>
+</li>
+
+                        
+                            
+<li class="active">
+    <a href="./">Git Hands on</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../04-vm-handson/">Virtual Machine Hands-on</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Cloud-TelcoCloud/">Cloud TelcoCloud</a>
+</li>
+
+                        
+                        </ul>
                     </li>
                 
                 
@@ -81,52 +120,67 @@
                         
                             
 <li >
-    <a href="../introduction-telecom/">Introduction to Telecom Bootcamp</a>
+    <a href="../../notes/01-introduction-telecom/">Day 1</a>
 </li>
 
                         
                             
 <li >
-    <a href="../Cloud-TelcoCloud/">Cloud Computing & Telco Cloud</a>
+    <a href="../../notes/02-Cloud-TelcoCloud/">Cloud Computing & Telco Cloud</a>
 </li>
 
                         
                             
 <li >
-    <a href="../git/">Git & GitOps</a>
+    <a href="../../notes/03-linux/">Linux</a>
 </li>
 
                         
                             
 <li >
-    <a href="../linux/">Linux</a>
+    <a href="../../notes/04-linux-networking/">Linux networking explained</a>
 </li>
 
                         
                             
 <li >
-    <a href="../shellscripting/">Linux Shell scripting</a>
-</li>
-
-                        
-                        </ul>
-                    </li>
-                
-                
-                
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Excercises <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                        
-                            
-<li >
-    <a href="../../excercises/preparation/">01 - System Preparation</a>
+    <a href="../../notes/05-git/">Git & GitOps for Telecom Engineers</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../excercises/git-handson/">02 - Git Hands-on</a>
+    <a href="../../notes/06-virtualization/">Virtualization</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../notes/DPDK/">DPDK & SR-IOV</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../notes/NFVI/">Network function virtualization</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../notes/cloud-services/">Cloud services</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../notes/containers/">Containers</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../notes/shellscripting/">Shell Scripting 101</a>
 </li>
 
                         
@@ -142,8 +196,18 @@
                             <i class="fas fa-search"></i> Search
                         </a>
                     </li>
+                    <li >
+                        <a rel="prev" href="../02-linux-shellscripting/">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="next" href="../04-vm-handson/">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </li>
                     <li>
-                        <a href="https://github.com/mohitkr05/TelcoBootcamp/edit/master/docs/notes/NFV.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                        <a href="https://github.com/mohitkr05/TelcoBootcamp/edit/master/docs/excercises/03-git-handson.md"><i class="fab fa-github"></i> Edit on GitHub</a>
                     </li>
             </ul>
         </div>
@@ -155,18 +219,167 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="first-level active"><a href="#network-function-virtualization">Network function virtualization</a></li>
+        <li class="first-level active"><a href="#git-hands-on">Git Hands on</a></li>
+            <li class="second-level"><a href="#excercises">Excercises</a></li>
+                
+            <li class="second-level"><a href="#solution">Solution</a></li>
+                
+            <li class="second-level"><a href="#working-with-changes">Working with Changes</a></li>
+                
+            <li class="second-level"><a href="#branching-and-merging">Branching and Merging</a></li>
+                
+                <li class="third-level"><a href="#working-with-remotes">Working with Remotes</a></li>
+                <li class="third-level"><a href="#checking-history">Checking History</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<h1 id="network-function-virtualization">Network function virtualization</h1>
-<p>Network virtualization involves abstracting network functions to be controlled and manipulated by software on standardized compute nodes.</p>
-<p>Network Functions Virtualization (NFV) integrates cloud and virtualization technologies, facilitating the rapid development of scalable and automated network services.</p></div>
+<h1 id="git-hands-on">Git Hands on</h1>
+<h2 id="excercises">Excercises</h2>
+<ul>
+<li>[ ] Create a new GitHub profile</li>
+<li>[ ] Configure git on your system</li>
+<li>[ ] Create a new repository in GitHub</li>
+<li>[ ] Clone the repository</li>
+<li>[ ] Change some files</li>
+<li>[ ] Push the code onto the remote repository</li>
+<li>[ ] Pull the code from the remote repository</li>
+<li>[ ] Create a branch and switch to it</li>
+<li>[ ] Fork the code from TelcoBootcamp</li>
+<li>[ ] Add a branch</li>
+<li>[ ] Submit a PR </li>
+</ul>
+<h2 id="solution">Solution</h2>
+<ul>
+<li>
+<p>Configure Git:</p>
+<p><code>bash
+    git config --global user.name "Your Name"
+    git config --global user.email "your.email@example.com"</code></p>
+</li>
+<li>
+<p>Initialize a Git Repository
+  <code>bash
+  git init</code></p>
+</li>
+<li>
+<p>Clone a Repository:</p>
+</li>
+</ul>
+<p><code>bash
+    git clone &lt;repository_url&gt;</code>
+ Creates a copy of a remote repository on your local machine.</p>
+<h2 id="working-with-changes">Working with Changes</h2>
+<ul>
+<li>Check Status:</li>
+</ul>
+<p><code>bash
+   git status</code>
+   Shows the status of changes as untracked, modified, or staged.</p>
+<ul>
+<li>
+<p>Stage Changes:</p>
+<p><code>bash
+git add &lt;file(s)&gt;</code>
+ Adds changes to the staging area in preparation for a commit.</p>
+</li>
+<li>
+<p>Commit Changes:</p>
+<p><code>bash
+    git commit -m "Commit message"</code>
+Records staged changes with a descriptive commit message.</p>
+</li>
+</ul>
+<h2 id="branching-and-merging">Branching and Merging</h2>
+<ul>
+<li>
+<p>Create a Branch:</p>
+<p><code>bash
+git branch &lt;branch_name&gt;</code>
+Creates a new branch.</p>
+</li>
+<li>
+<p>Switch Branch:
+    <code>bash
+    git checkout &lt;branch_name&gt;</code>
+    Switches to the specified branch.</p>
+</li>
+<li>
+<p>Merge Branch:
+    <code>bash
+    git merge &lt;branch_name&gt;</code>
+    Combines changes from the specified branch into the current branch.</p>
+</li>
+</ul>
+<h3 id="working-with-remotes">Working with Remotes</h3>
+<ul>
+<li>
+<p>Add a Remote Repository:
+   <code>bash
+   git remote add &lt;remote_name&gt; &lt;remote_url&gt;</code>
+    Adds a remote repository.</p>
+</li>
+<li>
+<p>Push Changes to a Remote Repository:</p>
+<p><code>bash
+git push &lt;remote_name&gt; &lt;branch_name&gt;</code>
+Pushes committed changes to a remote repository.</p>
+</li>
+<li>
+<p>Pull Changes from a Remote Repository:</p>
+<p><code>bash
+git pull &lt;remote_name&gt; &lt;branch_name&gt;</code>
+Fetches and merges changes from a remote repository.</p>
+</li>
+</ul>
+<h3 id="checking-history">Checking History</h3>
+<ul>
+<li>
+<p>View Commit History:</p>
+<p><code>bash
+git log</code>
+Displays a log of commits.</p>
+</li>
+<li>
+<p>Show Changes in a Commit:</p>
+<p><code>bash
+git show &lt;commit_hash&gt;</code>
+Displays the changes introduced by a specific commit.</p>
+</li>
+<li>
+<p>Downloading and installing Git : If you don't already have Git installed, you can download Git at www.git-scm.com.
+    &gt; If you need additional assistance installing Git, you can find more information in the ProGit chapter on installing Git.</p>
+</li>
+</ul>
+<p>Now is a good time to create a shortcut to the command-line application you will want to use with Git:</p>
+<pre><code>If you are working on Windows, It is highly recommended to use Git Bash which is installed with the Git package, so that you can follow along with the facilitator who will be using Bash
+If you are working on macOS or another Unix-like system, you can use the built-in Terminal application
+</code></pre>
+<ol>
+<li>Clone the following repository</li>
+</ol>
+<p>Open your chosen shell, and type:</p>
+<p><code>git clone https://github.com/mohitkr05/TelcoBootcamp.git</code></p>
+<p>If the clone is successful you'll see:</p>
+<pre><code>$ git clone https://github.com/mohitkr05/TelcoBootcamp.git
+Cloning into 'TelcoBootcamp'...
+remote: Counting objects: 6, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (6/6), done.
+</code></pre></div>
         
         
     </div>
 
+    
+      <footer class="col-md-12 text-center">
+          
+          
+
+          
+          
+      </footer>
     
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="../../js/bootstrap-3.0.3.min.js"></script>

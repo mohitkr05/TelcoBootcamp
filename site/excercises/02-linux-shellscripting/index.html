@@ -11,7 +11,7 @@
     <link rel="shortcut icon" href="../../img/favicon.ico">
 
     
-    <title>Vm handson - Telecom Bootcamp</title>
+    <title>Linux and Shell scripting - Telecom Bootcamp</title>
     
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
@@ -70,7 +70,46 @@
                 
                 
                     <li >
-                        <a href="../..">Home</a>
+                        <a href="../..">Telecom Boot Camp</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Excercises <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../01-preparation/">System preparation</a>
+</li>
+
+                        
+                            
+<li class="active">
+    <a href="./">Linux and Shell scripting</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../03-git-handson/">Git Hands on</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../04-vm-handson/">Virtual Machine Hands-on</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Cloud-TelcoCloud/">Cloud TelcoCloud</a>
+</li>
+
+                        
+                        </ul>
                     </li>
                 
                 
@@ -81,52 +120,67 @@
                         
                             
 <li >
-    <a href="../../notes/introduction-telecom/">Introduction to Telecom Bootcamp</a>
+    <a href="../../notes/01-introduction-telecom/">Day 1</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../notes/Cloud-TelcoCloud/">Cloud Computing & Telco Cloud</a>
+    <a href="../../notes/02-Cloud-TelcoCloud/">Cloud Computing & Telco Cloud</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../notes/git/">Git & GitOps</a>
+    <a href="../../notes/03-linux/">Linux</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../notes/linux/">Linux</a>
+    <a href="../../notes/04-linux-networking/">Linux networking explained</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../notes/shellscripting/">Linux Shell scripting</a>
-</li>
-
-                        
-                        </ul>
-                    </li>
-                
-                
-                
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Excercises <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                        
-                            
-<li >
-    <a href="../preparation/">01 - System Preparation</a>
+    <a href="../../notes/05-git/">Git & GitOps for Telecom Engineers</a>
 </li>
 
                         
                             
 <li >
-    <a href="../git-handson/">02 - Git Hands-on</a>
+    <a href="../../notes/06-virtualization/">Virtualization</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../notes/DPDK/">DPDK & SR-IOV</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../notes/NFVI/">Network function virtualization</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../notes/cloud-services/">Cloud services</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../notes/containers/">Containers</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../notes/shellscripting/">Shell Scripting 101</a>
 </li>
 
                         
@@ -142,8 +196,18 @@
                             <i class="fas fa-search"></i> Search
                         </a>
                     </li>
+                    <li >
+                        <a rel="prev" href="../01-preparation/">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="next" href="../03-git-handson/">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </li>
                     <li>
-                        <a href="https://github.com/mohitkr05/TelcoBootcamp/edit/master/docs/excercises/vm-handson.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                        <a href="https://github.com/mohitkr05/TelcoBootcamp/edit/master/docs/excercises/02-linux-shellscripting.md"><i class="fab fa-github"></i> Edit on GitHub</a>
                     </li>
             </ul>
         </div>
@@ -155,15 +219,104 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#linux-and-shell-scripting">Linux and Shell scripting</a></li>
+            <li class="second-level"><a href="#linux-excercise">Linux excercise</a></li>
+                
+                <li class="third-level"><a href="#command-line-excercise">Command Line excercise</a></li>
+                <li class="third-level"><a href="#linux-as-a-multi-user-environment">Linux as a Multi-user Environment</a></li>
+            <li class="second-level"><a href="#shell-scripting-hands-on">Shell scripting hands on</a></li>
+                
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-</div>
+<h1 id="linux-and-shell-scripting">Linux and Shell scripting</h1>
+<h2 id="linux-excercise">Linux excercise</h2>
+<h3 id="command-line-excercise">Command Line excercise</h3>
+<p>The objective of this excercise is to understand how command line works in Linux</p>
+<ol>
+<li>Check which shell you are using.</li>
+<li>Repeat the above command with a short cut key.</li>
+<li>Create a directory <code>hello</code> and create a file <code>hello.txt</code> in it.</li>
+<li>Edit the file <code>hello.txt</code> and write <code>Hello World</code> in it.</li>
+<li>Manipulate the file and perform the folloing<ul>
+<li>Open the file -  <code>cat hello.txt</code></li>
+<li>Count the lines in the file - <code>wc -l hello.txt</code></li>
+<li>Count the first 5 lines in the file - <code>head -n 5 hello.txt</code></li>
+<li>Count the last 5 lines in the file - <code>tail -n 5 hello.txt</code></li>
+</ul>
+</li>
+<li>Use the input and output redirection in two of the commands.</li>
+<li>Use a pipe operator with two commands.</li>
+<li>Print out the root directory structure in a file with a single line command.</li>
+<li>Instal wireshark on the system.</li>
+<li>Remove the package wireshark from the system.</li>
+</ol>
+<h3 id="linux-as-a-multi-user-environment">Linux as a Multi-user Environment</h3>
+<p>The objective of this excercise is to understand how multiuser environment works in Linux</p>
+<ol>
+<li>
+<p>You are a system administrator. Create the following permission scopes</p>
+<ol>
+<li>Create 3 Groups - <code>sysadmins</code>, <code>netengineers</code> and <code>users</code> </li>
+<li>Create 4 Users - <code>john</code>, <code>paul</code>,<code>ajay</code> , <code>george</code> and <code>ringo</code></li>
+<li>Add users to groups - <ul>
+<li><code>john</code> in <code>sysadmins</code></li>
+<li><code>paul</code> &amp; <code>ajay</code> in <code>netengineers</code> </li>
+<li><code>george</code> &amp; <code>ringo</code> in <code>users</code></li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>Add the user <code>john</code> to sudoers list.</p>
+</li>
+<li>
+<p>Switch user with each of the above user and validate the following</p>
+<ul>
+<li>Type of shell </li>
+<li>home directory</li>
+</ul>
+</li>
+<li>
+<p>Create the following directories in <code>/opt/project</code>.  Use only a single line command to do this.</p>
+<ol>
+<li><code>/opt/project/sysadmin</code></li>
+<li><code>/opt/project/netengineers</code></li>
+<li><code>/opt/project/users</code></li>
+</ol>
+</li>
+<li>
+<p>Change the ownership of both directories to the following groups </p>
+<ol>
+<li>owner sysadmin -  /opt/project/sysadmin</li>
+<li>owner netengineers - /opt/project/netengineers</li>
+<li>owner users -  /opt/project/users</li>
+</ol>
+</li>
+<li>
+<p>Validate that both <code>ajay</code> and <code>paul</code> are able to access the documents in the directory <code>/opt/project/netengineers</code> &amp; not able to access any documents in <code>/opt/project/sysadmin</code>.</p>
+</li>
+<li>
+<p>Validate that <code>george</code> and <code>ringo</code> are able to access the documents in the directory <code>/opt/project/users</code> &amp; not able to access any documents in <code>/opt/project/sysadmin</code>.</p>
+</li>
+<li>
+<p>Create a new file in <code>/opt/project/netengineers</code> with the user <code>ajay</code>. Switch to <code>paul</code> - Can you write to this file? How can you do this?</p>
+</li>
+</ol>
+<h2 id="shell-scripting-hands-on">Shell scripting hands on</h2></div>
         
         
     </div>
 
+    
+      <footer class="col-md-12 text-center">
+          
+          
+
+          
+          
+      </footer>
     
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="../../js/bootstrap-3.0.3.min.js"></script>

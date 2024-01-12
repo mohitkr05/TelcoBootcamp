@@ -23,7 +23,7 @@ Notes - Updated for Cohort 1 - (Nov-2023 to Feb-2024)
 | 4 | Linux & Git Fundamentals | [Linux Networking](notes/04-linux-networking.md) | - |
 | 5 | Linux & Git Fundamentals | [Git Basics](notes/05-git.md) |  [Git Hands on Excercises](excercises/03-git-handson.md) |
 | 6 | Linux & Git Fundamentals | [Shell Scripting](notes/shellscripting.md) | [Linux and Shell scripting](excercises/02-linux-shellscripting.md) |
-| 7 | Virtualization in Telecom |  [Virtualization in Telecom](notes/06-virtualization.md) | [Virtual Machine HandsOn](excercises/04-vm-handson.md) |
+| 7 | Virtualization in Telecom |  [Virtualization in Telecom](notes/virtualization/06-virtualization.md) | [Virtual Machine HandsOn](excercises/04-vm-handson.md) |
 | 9 | Introduction to Containers | 5 | [Cloud Computing and Telco Cloud](excercises/Cloud-TelcoCloud.md) |
 | 10 | Introduction to Containers | 5 | 5 |
 | 11 | Introduction to Containers | 5 | 5 |
