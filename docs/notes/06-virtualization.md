@@ -69,5 +69,12 @@ Virtualization is a fundamental technology in cloud computing, enabling the effi
 
 ## NFV and NFVi
 
+[NFVi](NFVI.md)
+
+
+## Openstack
+
+
 ## DPDK
+
 [DPDK](DPDK.md)

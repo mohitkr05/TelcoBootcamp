@@ -1,4 +1,4 @@
-# 01 - System preparation
+# System preparation
 
 Suggest method is to use Virtual Machine with VirtualBox on your local PC, if you have resource constraints you can use WSL as well.
 

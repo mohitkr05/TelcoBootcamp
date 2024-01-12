@@ -230,6 +230,6 @@ Unpacking objects: 100% (6/6), done.
 
 
 3. Assignment
-- [Excercise -  Git](../excercises/git-handson.md)
+- [Excercise -  Git](../excercises/03-git-handson.md)
 - Read the Pro Git Ebook
 - Watch the Linux command line video

@@ -7,27 +7,11 @@ theme:
   custom_dir: 'cinder'
   colorscheme: dracula
   highlightjs: true
-  disable_footer: true
+  disable_footer: false
   # Turn off the default footer message, but display the page revision date if it's available
   disable_footer_except_revision: true
   hljs_languages:
     - yaml
-nav:
-  - Home: index.md
-  - Notes:
-    - Introduction to Telecom Bootcamp: notes/introduction-telecom.md
-    - Cloud Computing & Telco Cloud: notes/Cloud-TelcoCloud.md
-    - Git & GitOps: notes/git.md
-    - Linux: notes/linux.md
-    - Linux Shell scripting: notes/shellscripting.md
-  - Excercises:
-    - 01 - System Preparation: excercises/preparation.md
-    - 02 - Git Hands-on: excercises/git-handson.md
-  #   - Cloud Computing & Telco Cloud: excercises/Cloud-TelcoCloud.md
-  #   - Git & GitOps: excercises/git.md
-    # - Linux and Command Line: linux.md
-    # - Shell Scripting: shell-scripting.md
-
 
 markdown_extensions:
   - admonition
