@@ -12,7 +12,7 @@ allowing data packets to transition to the user space directly without having to
 
 SR-IOV, an acronym for Single Root I/O Virtualization, serves the purpose of partitioning a singular physical function, such as a *Network Interface Card (NIC)*, into *multiple virtual functions*. 
 
-![sr-iov](../assets/image-8.png)
+![sr-iov](../../assets/image-8.png)
 
 - These virtual functions act as independent network interfaces accessible through application
 - The concept behind SR-IOV involves creating virtual functions that mimic direct access to the NIC, offering accelerated Input/Output (IO) by bypassing both the Virtual Machine Manager and the Virtual Switch
@@ -27,9 +27,9 @@ SR-IOV, an acronym for Single Root I/O Virtualization, serves the purpose of par
 - The Linux networking stack is a layered architecture that handles various networking tasks.
 
 
-![Alt text](../assets/image-1.png)
+![Alt text](../../assets/image-1.png)
 
-![Alt text](../assets/image.png)
+![Alt text](../../assets/image.png)
 - Key layers include the Data Link Layer, Network Layer, Transport Layer, and Application Layer.
 
 
@@ -39,7 +39,7 @@ Packets traverse a multi-layered stack within the kernel,
 involving tasks like buffering, demultiplexing, protocol processing, and socket-based delivery to applications.
 There are two primary methods for Network Interface Card (NIC) communication with the kernel: interrupts and polling. Both techniques can be employed independently, or a combination of both may be utilized.
 
-![Alt text](../assets/image-4.png)
+![Alt text](../../assets/image-4.png)
 
 *Interrupt-Driven I/O*
 - Currently, interrupt-driven I/O is the more prevalent technique.
@@ -60,7 +60,7 @@ There are two primary methods for Network Interface Card (NIC) communication wit
 
 SK_BUFF (Socket Buffer) is a fundamental data structure in the Linux kernel that represents network packets. It plays a crucial role in packet processing, buffering, and transmission across various network layers.
 
-![Alt text](../assets/image-2.png)
+![Alt text](../../assets/image-2.png)
 
 
 *Key characteristics*
@@ -84,7 +84,7 @@ SK_BUFF (Socket Buffer) is a fundamental data structure in the Linux kernel that
 - Function Pointers:
     - Includes function pointers for custom packet processing actions, allowing for protocol-specific handling and flexibility.
 
-![Alt text](../assets/image-3.png)
+![Alt text](../../assets/image-3.png)
 - Key uses within the kernel:
   - Network Device Drivers receive and transmit packets using SK_BUFFs.
   - Network Stack Layers Process and forward packets through layers like IP, TCP, and UDP.
@@ -116,7 +116,7 @@ Within DPDK, there are Poll Mode Drivers (PMDs) for 1, 10, and 40 Gigabit, along
 PMDs serve as software components with APIs, enabling interaction with Network Interface Cards (NICs) and their queues directly from user space. By utilizing PMDs, DPDK applications gain the capability to access RX and TX descriptors without relying on interrupts, eliminating the necessity for the kernel to manage network traffic.
 
 
-![Alt text](../assets/image-5.png)
+![Alt text](../../assets/image-5.png)
 
  
 
@@ -156,7 +156,7 @@ DPDK applications for packet processing can be categorized into two different ty
 
 #### Run-to-Completion mode 
 
-![Alt text](../assets/image-6.png)
+![Alt text](../../assets/image-6.png)
 
 In the Run-to-Completion mode, the entire packet processing or network-related tasks are handled by a single thread within the application. This thread is responsible for executing the tasks in a sequential order.
 - Incoming packets are typically placed in a queue. The single-threaded application dequeues tasks from this queue and processes them one at a time.
@@ -175,7 +175,7 @@ This model involves breaking down a complex operation or set of tasks into small
 
 
 
-![Alt text](../assets/image-7.png)
+![Alt text](../../assets/image-7.png)
 
 
 ### Differences

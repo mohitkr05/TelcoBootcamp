@@ -53,7 +53,7 @@ Network Functions Virtualization (NFV) integrates cloud and virtualization techn
 NFV Infrastructure (NFVi) refers to the underlying hardware and software infrastructure that supports the deployment and execution of virtualized network functions. NFVi provides the necessary compute, storage, and networking resources to host virtualized network functions efficiently. It serves as the foundation for the virtualized network services enabled by NFV.
 
 ## NFVi Architecture
-![nfvi-architecture](../assets/NFVi-Architecture.png)
+![nfvi-architecture](../../assets/NFVi-Architecture.png)
 
 - Virtualization Layer: The virtualization layer consists of hypervisors or container runtimes that enable the creation and management of virtual machines or containers running network functions.
 
